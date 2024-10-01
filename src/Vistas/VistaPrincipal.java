@@ -4,6 +4,9 @@
  */
 package Vistas;
 
+import Controlador.ControladorVistaPrincipal;
+import Modelo.ModeloVistaPrincipal;
+
 /**
  *
  * @author axels
@@ -15,6 +18,10 @@ public class VistaPrincipal extends javax.swing.JFrame {
      */
     public VistaPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        Modelo.ModeloVistaPrincipal modelo = new ModeloVistaPrincipal(this);
+        Controlador.ControladorVistaPrincipal controlador = new ControladorVistaPrincipal(modelo);
+        setControlador(controlador);
     }
 
     /**
@@ -26,18 +33,49 @@ public class VistaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        FondoPanel = new javax.swing.JPanel();
+        PanelMenuVertical = new javax.swing.JPanel();
+        contenedor = new javax.swing.JPanel();
+        Fondo = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+
+        FondoPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        PanelMenuVertical.setBackground(new java.awt.Color(51, 51, 51));
+
+        javax.swing.GroupLayout PanelMenuVerticalLayout = new javax.swing.GroupLayout(PanelMenuVertical);
+        PanelMenuVertical.setLayout(PanelMenuVerticalLayout);
+        PanelMenuVerticalLayout.setHorizontalGroup(
+            PanelMenuVerticalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        PanelMenuVerticalLayout.setVerticalGroup(
+            PanelMenuVerticalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 720, Short.MAX_VALUE)
         );
+
+        FondoPanel.add(PanelMenuVertical, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 720));
+
+        javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
+        contenedor.setLayout(contenedorLayout);
+        contenedorLayout.setHorizontalGroup(
+            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1230, Short.MAX_VALUE)
+        );
+        contenedorLayout.setVerticalGroup(
+            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 720, Short.MAX_VALUE)
+        );
+
+        FondoPanel.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 1230, 720));
+
+        Fondo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo1.png"))); // NOI18N
+        FondoPanel.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        getContentPane().add(FondoPanel, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,5 +116,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Fondo;
+    private javax.swing.JPanel FondoPanel;
+    private javax.swing.JPanel PanelMenuVertical;
+    public javax.swing.JPanel contenedor;
     // End of variables declaration//GEN-END:variables
+
+    public void setControlador(ControladorVistaPrincipal controlador){
+        this.addWindowListener(controlador);
+    }
 }
