@@ -5,6 +5,7 @@ import Vistas.VistaPrincipal;
 public class ModeloVistaPrincipal {
     VistaPrincipal vistaP;
 
+
     public ModeloVistaPrincipal() {
     }
 

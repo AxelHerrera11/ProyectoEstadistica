@@ -1,23 +1,24 @@
 package Modelo;
 
-import Vistas.PanelInicio;
+import Vistas.VistaPrincipal;
 
 public class ModeloPanelInicial {
-    PanelInicio vistaPanelInicio;
+
+    Vistas.VistaPrincipal vistaP;
 
     public ModeloPanelInicial() {
     }
 
-    public ModeloPanelInicial(PanelInicio vistaPanelInicio) {
-        this.vistaPanelInicio = vistaPanelInicio;
+    public ModeloPanelInicial(VistaPrincipal vistaP) {
+        this.vistaP = vistaP;
     }
 
-    public PanelInicio getVistaPanelInicio() {
-        return vistaPanelInicio;
+    public VistaPrincipal getVistaP() {
+        return vistaP;
     }
 
-    public void setVistaPanelInicio(PanelInicio vistaPanelInicio) {
-        this.vistaPanelInicio = vistaPanelInicio;
+    public void setVistaP(VistaPrincipal vistaP) {
+        this.vistaP = vistaP;
     }
     
     

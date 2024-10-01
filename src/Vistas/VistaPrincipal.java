@@ -4,8 +4,10 @@
  */
 package Vistas;
 
+
 import Controlador.ControladorVistaPrincipal;
 import Modelo.ModeloVistaPrincipal;
+
 
 /**
  *
@@ -20,9 +22,19 @@ public class VistaPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         Modelo.ModeloVistaPrincipal modelo = new ModeloVistaPrincipal(this);
+//        Modelo.ModeloVistaPrincipal modelo2 = new ModeloVistaPrincipal(this);
         Controlador.ControladorVistaPrincipal controlador = new ControladorVistaPrincipal(modelo);
+//        Controlador.ControladorPanelInicio controlador2 = new ControladorPanelInicio(modelo2);
         setControlador(controlador);
+//        setControlador2(controlador2);
+        this.lbBtn1.setVisible(false);
+        this.lbBtn2.setVisible(false);
+        this.lbBtn3.setVisible(false);
+        this.bordeBtn1.setVisible(false);
+        this.bordeBtn2.setVisible(false);
+        this.bordeBtn3.setVisible(false);
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,6 +48,26 @@ public class VistaPrincipal extends javax.swing.JFrame {
         FondoPanel = new javax.swing.JPanel();
         PanelMenuVertical = new javax.swing.JPanel();
         contenedor = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        btn3 = new javax.swing.JPanel();
+        bordeBtn3 = new javax.swing.JLabel();
+        lbBtn3 = new javax.swing.JLabel();
+        lbBtn3Degradado = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        btn2 = new javax.swing.JPanel();
+        bordeBtn2 = new javax.swing.JLabel();
+        lbBtn2 = new javax.swing.JLabel();
+        lbBtn2Degradado = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        btn1 = new javax.swing.JPanel();
+        bordeBtn1 = new javax.swing.JLabel();
+        lbBtn1 = new javax.swing.JLabel();
+        lbBtn1Degradado = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        Degradado = new javax.swing.JLabel();
+        Fondo1 = new javax.swing.JLabel();
+        Fondo2 = new javax.swing.JLabel();
+        Fondo3 = new javax.swing.JLabel();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,15 +90,91 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         FondoPanel.add(PanelMenuVertical, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 720));
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        bordeBtn3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(247, 196, 0), 2));
+        btn3.add(bordeBtn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 120));
+
+        lbBtn3.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        lbBtn3.setForeground(new java.awt.Color(255, 255, 255));
+        lbBtn3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbBtn3.setText("Hola 3");
+        btn3.add(lbBtn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 120));
+
+        lbBtn3Degradado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BotonDegradado.png"))); // NOI18N
+        lbBtn3Degradado.setText("jLabel4");
+        btn3.add(lbBtn3Degradado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 120));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn3.png"))); // NOI18N
+        btn3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 120));
+
+        jPanel1.add(btn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 550, 200, 120));
+
+        btn2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        bordeBtn2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(247, 196, 0), 2));
+        btn2.add(bordeBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 120));
+
+        lbBtn2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbBtn2.setForeground(new java.awt.Color(255, 255, 255));
+        lbBtn2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbBtn2.setText("Hola 2");
+        btn2.add(lbBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 120));
+
+        lbBtn2Degradado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BotonDegradado.png"))); // NOI18N
+        btn2.add(lbBtn2Degradado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 120));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn2.png"))); // NOI18N
+        btn2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 120));
+
+        jPanel1.add(btn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 550, 200, 120));
+
+        btn1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        bordeBtn1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(247, 196, 0), 2));
+        btn1.add(bordeBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 120));
+
+        lbBtn1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbBtn1.setForeground(new java.awt.Color(255, 255, 255));
+        lbBtn1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbBtn1.setText("Hola");
+        btn1.add(lbBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 120));
+
+        lbBtn1Degradado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BotonDegradado.png"))); // NOI18N
+        btn1.add(lbBtn1Degradado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 120));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn1.png"))); // NOI18N
+        btn1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 120));
+
+        jPanel1.add(btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 550, 200, 120));
+
+        Degradado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/DegradadoNegro.png"))); // NOI18N
+        jPanel1.add(Degradado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 720));
+
+        Fondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoPanel1.png"))); // NOI18N
+        jPanel1.add(Fondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 720));
+
+        Fondo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoPanel2.png"))); // NOI18N
+        jPanel1.add(Fondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 720));
+
+        Fondo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoPanel3.png"))); // NOI18N
+        jPanel1.add(Fondo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 720));
+
         javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
         contenedor.setLayout(contenedorLayout);
         contenedorLayout.setHorizontalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1230, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contenedorLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         contenedorLayout.setVerticalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contenedorLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         FondoPanel.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 1230, 720));
@@ -116,13 +224,40 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JLabel Degradado;
     private javax.swing.JLabel Fondo;
+    public javax.swing.JLabel Fondo1;
+    public javax.swing.JLabel Fondo2;
+    public javax.swing.JLabel Fondo3;
     private javax.swing.JPanel FondoPanel;
     private javax.swing.JPanel PanelMenuVertical;
+    public javax.swing.JLabel bordeBtn1;
+    public javax.swing.JLabel bordeBtn2;
+    public javax.swing.JLabel bordeBtn3;
+    public javax.swing.JPanel btn1;
+    public javax.swing.JPanel btn2;
+    public javax.swing.JPanel btn3;
     public javax.swing.JPanel contenedor;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JLabel lbBtn1;
+    public javax.swing.JLabel lbBtn1Degradado;
+    public javax.swing.JLabel lbBtn2;
+    public javax.swing.JLabel lbBtn2Degradado;
+    public javax.swing.JLabel lbBtn3;
+    public javax.swing.JLabel lbBtn3Degradado;
     // End of variables declaration//GEN-END:variables
 
     public void setControlador(ControladorVistaPrincipal controlador){
         this.addWindowListener(controlador);
+        btn1.addMouseListener(controlador);
+        btn2.addMouseListener(controlador);
+        btn3.addMouseListener(controlador);
     }
+    
+//    public void setControlador2(ControladorVistaPrincipal controlador2){
+//        
+//    }
 }
