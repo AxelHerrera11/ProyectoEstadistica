@@ -22,20 +22,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         Modelo.ModeloVistaPrincipal modelo = new ModeloVistaPrincipal(this);
-//        Modelo.ModeloVistaPrincipal modelo2 = new ModeloVistaPrincipal(this);
         Controlador.ControladorVistaPrincipal controlador = new ControladorVistaPrincipal(modelo);
-//        Controlador.ControladorPanelInicio controlador2 = new ControladorPanelInicio(modelo2);
+
         setControlador(controlador);
-//        setControlador2(controlador2);
-//        this.lbBtn1.setVisible(false);
-//        this.lbBtn2.setVisible(false);
-//        this.lbBtn3.setVisible(false);
-//        this.bordeBtn1.setVisible(false);
-//        this.bordeBtn2.setVisible(false);
-//        this.bordeBtn3.setVisible(false);
-        this.btn1.setVisible(false);
-        this.btn2.setVisible(false);
-        this.btn3.setVisible(false);
         
     }
     
@@ -57,7 +46,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         PanelFondoMenu = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        txtaDescripcionProblema = new javax.swing.JTextArea();
         btn3 = new javax.swing.JPanel();
         bordeBtn3 = new javax.swing.JLabel();
         lbBtn3 = new javax.swing.JLabel();
@@ -109,15 +98,15 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jScrollPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
 
-        jTextArea2.setBackground(new java.awt.Color(255, 255, 255));
-        jTextArea2.setColumns(20);
-        jTextArea2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextArea2.setLineWrap(true);
-        jTextArea2.setRows(5);
-        jTextArea2.setWrapStyleWord(true);
-        jTextArea2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
-        jTextArea2.setOpaque(false);
-        jScrollPane2.setViewportView(jTextArea2);
+        txtaDescripcionProblema.setBackground(new java.awt.Color(255, 255, 255));
+        txtaDescripcionProblema.setColumns(20);
+        txtaDescripcionProblema.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtaDescripcionProblema.setLineWrap(true);
+        txtaDescripcionProblema.setRows(5);
+        txtaDescripcionProblema.setWrapStyleWord(true);
+        txtaDescripcionProblema.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
+        txtaDescripcionProblema.setOpaque(false);
+        jScrollPane2.setViewportView(txtaDescripcionProblema);
 
         PanelFondoMenu.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 990, 160));
 
@@ -288,14 +277,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea2;
+    public javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JLabel lbBtn1;
     public javax.swing.JLabel lbBtn1Degradado;
     public javax.swing.JLabel lbBtn2;
     public javax.swing.JLabel lbBtn2Degradado;
     public javax.swing.JLabel lbBtn3;
     public javax.swing.JLabel lbBtn3Degradado;
+    public javax.swing.JTextArea txtaDescripcionProblema;
     // End of variables declaration//GEN-END:variables
 
     public void setControlador(ControladorVistaPrincipal controlador){

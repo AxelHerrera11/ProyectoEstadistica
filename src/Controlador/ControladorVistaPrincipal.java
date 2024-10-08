@@ -38,8 +38,9 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
 
     @Override
     public void windowOpened(WindowEvent e) {
-//        Vistas.PanelInicio panelI = new PanelInicio();
-//        MostrarPanel(panelI);
+        modelo.getVistaP().btn1.setVisible(false);
+        modelo.getVistaP().btn2.setVisible(false);
+        modelo.getVistaP().btn3.setVisible(false);
     }
 
     @Override

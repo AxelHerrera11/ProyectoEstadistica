@@ -4,6 +4,10 @@
  */
 package Vistas;
 
+import Controlador.ControladorPanelPC;
+import Modelo.ModeloPanelPC;
+import java.awt.Color;
+
 /**
  *
  * @author axels
@@ -15,6 +19,17 @@ public class PanelProbabilidadCondicional extends javax.swing.JPanel {
      */
     public PanelProbabilidadCondicional() {
         initComponents();
+        Modelo.ModeloPanelPC modelo = new ModeloPanelPC(this);
+        Controlador.ControladorPanelPC controlador = new ControladorPanelPC(modelo);
+        setControlador(controlador);
+        
+        this.txtAB.setBackground(new Color(0,0,0,1));
+        this.txtN1.setBackground(new Color(0,0,0,1));
+        this.txtB.setBackground(new Color(0,0,0,1));
+        this.txtN2.setBackground(new Color(0,0,0,1));
+        this.txtPAB.setBackground(new Color(0,0,0,1));
+        this.txtPB.setBackground(new Color(0,0,0,1));
+        this.txtRespuesta.setBackground(new Color(0,0,0,1));
     }
 
     /**
@@ -26,19 +41,101 @@ public class PanelProbabilidadCondicional extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        FondoPanel = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtaDescripcionProblema = new javax.swing.JTextArea();
+        btnResolver = new javax.swing.JPanel();
+        txtAB = new javax.swing.JTextField();
+        txtN1 = new javax.swing.JTextField();
+        txtB = new javax.swing.JTextField();
+        txtN2 = new javax.swing.JTextField();
+        txtPAB = new javax.swing.JTextField();
+        txtPB = new javax.swing.JTextField();
+        txtRespuesta = new javax.swing.JTextField();
         Fondo = new javax.swing.JLabel();
 
         setOpaque(false);
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        FondoPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
+
+        txtaDescripcionProblema.setBackground(new java.awt.Color(255, 255, 255));
+        txtaDescripcionProblema.setColumns(20);
+        txtaDescripcionProblema.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtaDescripcionProblema.setLineWrap(true);
+        txtaDescripcionProblema.setRows(5);
+        txtaDescripcionProblema.setWrapStyleWord(true);
+        txtaDescripcionProblema.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
+        txtaDescripcionProblema.setOpaque(false);
+        jScrollPane2.setViewportView(txtaDescripcionProblema);
+
+        FondoPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 990, 140));
+        FondoPanel.add(btnResolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 650, 150, 60));
+
+        txtAB.setFont(new java.awt.Font("Tw Cen MT", 0, 36)); // NOI18N
+        txtAB.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtAB.setBorder(null);
+        FondoPanel.add(txtAB, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 346, 140, 40));
+
+        txtN1.setFont(new java.awt.Font("Tw Cen MT", 0, 36)); // NOI18N
+        txtN1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtN1.setBorder(null);
+        FondoPanel.add(txtN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 390, 140, 40));
+
+        txtB.setFont(new java.awt.Font("Tw Cen MT", 0, 36)); // NOI18N
+        txtB.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtB.setBorder(null);
+        FondoPanel.add(txtB, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 440, 140, 40));
+
+        txtN2.setFont(new java.awt.Font("Tw Cen MT", 0, 36)); // NOI18N
+        txtN2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtN2.setBorder(null);
+        FondoPanel.add(txtN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 490, 140, 40));
+
+        txtPAB.setEditable(false);
+        txtPAB.setFont(new java.awt.Font("Tw Cen MT", 0, 36)); // NOI18N
+        txtPAB.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtPAB.setBorder(null);
+        FondoPanel.add(txtPAB, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 390, 140, 40));
+
+        txtPB.setEditable(false);
+        txtPB.setFont(new java.awt.Font("Tw Cen MT", 0, 36)); // NOI18N
+        txtPB.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtPB.setBorder(null);
+        FondoPanel.add(txtPB, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 440, 140, 40));
+
+        txtRespuesta.setEditable(false);
+        txtRespuesta.setFont(new java.awt.Font("Tw Cen MT", 0, 36)); // NOI18N
+        txtRespuesta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtRespuesta.setBorder(null);
+        FondoPanel.add(txtRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 410, 140, 40));
+
         Fondo.setBackground(new java.awt.Color(245, 245, 220));
-        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoProbabilidadCondicional.png"))); // NOI18N
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoPCFormula.png"))); // NOI18N
         Fondo.setOpaque(true);
-        add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 720));
+        FondoPanel.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 720));
+
+        add(FondoPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 720));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
+    private javax.swing.JPanel FondoPanel;
+    public javax.swing.JPanel btnResolver;
+    private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JTextField txtAB;
+    public javax.swing.JTextField txtB;
+    public javax.swing.JTextField txtN1;
+    public javax.swing.JTextField txtN2;
+    public javax.swing.JTextField txtPAB;
+    public javax.swing.JTextField txtPB;
+    public javax.swing.JTextField txtRespuesta;
+    private javax.swing.JTextArea txtaDescripcionProblema;
     // End of variables declaration//GEN-END:variables
+    public void setControlador(ControladorPanelPC controlador){
+        btnResolver.addMouseListener(controlador);
+    }
 }
