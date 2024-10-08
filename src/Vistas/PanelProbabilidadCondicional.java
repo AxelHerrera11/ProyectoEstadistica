@@ -8,12 +8,12 @@ package Vistas;
  *
  * @author axels
  */
-public class PanelProbabilidad1 extends javax.swing.JPanel {
+public class PanelProbabilidadCondicional extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelProbabilidad1
      */
-    public PanelProbabilidad1() {
+    public PanelProbabilidadCondicional() {
         initComponents();
     }
 
@@ -26,24 +26,19 @@ public class PanelProbabilidad1 extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         Fondo = new javax.swing.JLabel();
 
+        setOpaque(false);
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 200)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("HOLA");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 700, 410));
-
-        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoPanel1.png"))); // NOI18N
+        Fondo.setBackground(new java.awt.Color(245, 245, 220));
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoProbabilidadCondicional.png"))); // NOI18N
+        Fondo.setOpaque(true);
         add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 720));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
