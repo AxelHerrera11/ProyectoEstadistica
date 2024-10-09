@@ -154,5 +154,6 @@ public class PanelProbabilidadCondicional extends javax.swing.JPanel {
         txtN1.addKeyListener(controlador);
         txtB.addKeyListener(controlador);
         txtN2.addKeyListener(controlador);
+        btnResolver.addKeyListener(controlador);
     }
 }
