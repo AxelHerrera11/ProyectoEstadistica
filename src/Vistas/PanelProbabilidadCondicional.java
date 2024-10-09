@@ -74,23 +74,32 @@ public class PanelProbabilidadCondicional extends javax.swing.JPanel {
         FondoPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 990, 140));
         FondoPanel.add(btnResolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 650, 150, 60));
 
-        txtAB.setFont(new java.awt.Font("Tw Cen MT", 0, 36)); // NOI18N
+        txtAB.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        txtAB.setForeground(new java.awt.Color(102, 102, 102));
         txtAB.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtAB.setText("Ingrese Interseccion");
+        txtAB.setToolTipText("");
         txtAB.setBorder(null);
         FondoPanel.add(txtAB, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 346, 140, 40));
 
-        txtN1.setFont(new java.awt.Font("Tw Cen MT", 0, 36)); // NOI18N
+        txtN1.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        txtN1.setForeground(new java.awt.Color(102, 102, 102));
         txtN1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtN1.setText("Ingrese N");
         txtN1.setBorder(null);
         FondoPanel.add(txtN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 390, 140, 40));
 
-        txtB.setFont(new java.awt.Font("Tw Cen MT", 0, 36)); // NOI18N
+        txtB.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        txtB.setForeground(new java.awt.Color(102, 102, 102));
         txtB.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtB.setText("Ingrese nB");
         txtB.setBorder(null);
         FondoPanel.add(txtB, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 440, 140, 40));
 
-        txtN2.setFont(new java.awt.Font("Tw Cen MT", 0, 36)); // NOI18N
+        txtN2.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        txtN2.setForeground(new java.awt.Color(102, 102, 102));
         txtN2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtN2.setText("Ingrese N");
         txtN2.setBorder(null);
         FondoPanel.add(txtN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 490, 140, 40));
 
@@ -137,5 +146,13 @@ public class PanelProbabilidadCondicional extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
     public void setControlador(ControladorPanelPC controlador){
         btnResolver.addMouseListener(controlador);
+        txtAB.addMouseListener(controlador);
+        txtN1.addMouseListener(controlador);
+        txtB.addMouseListener(controlador);
+        txtN2.addMouseListener(controlador);
+        txtAB.addKeyListener(controlador);
+        txtN1.addKeyListener(controlador);
+        txtB.addKeyListener(controlador);
+        txtN2.addKeyListener(controlador);
     }
 }
