@@ -18,7 +18,6 @@ public class ControladorPanelPC implements ActionListener, WindowListener, Mouse
 
     Modelo.ModeloPanelPC modelo;
     ProConImp implementacion = new ProConImp();
-    DecimalFormat df = new DecimalFormat("#.00");
 
     public ControladorPanelPC(ModeloPanelPC modelo) {
         this.modelo = modelo;
