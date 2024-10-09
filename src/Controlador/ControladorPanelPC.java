@@ -18,6 +18,7 @@ public class ControladorPanelPC implements ActionListener, WindowListener, Mouse
 
     Modelo.ModeloPanelPC modelo;
     ProConImp implementacion = new ProConImp();
+    
 
     public ControladorPanelPC(ModeloPanelPC modelo) {
         this.modelo = modelo;
