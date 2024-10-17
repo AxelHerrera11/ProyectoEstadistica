@@ -34,6 +34,7 @@ public class ControladorPanelPC implements ActionListener, WindowListener, Mouse
         modelo.getVistaPC().txtPAB.setText(String.format("%.2f", model.getpAB()));
         modelo.getVistaPC().txtPB.setText(String.format("%.2f", model.getpB()));
         modelo.getVistaPC().txtRespuesta.setText(String.format("%.2f", model.getRespuesta()));
+        modelo.getVistaPC().txtRespuestaPorcentaje.setText(String.format("%.0f", model.getRespuestaPorcentaje()) + "%");
     }
 
     public void validarNumero(KeyEvent e) {

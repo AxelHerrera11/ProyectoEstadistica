@@ -11,6 +11,7 @@ public class ModeloPanelPC {
     private double pAB;
     private double pB;
     private double respuesta;
+    private double respuestaPorcentaje;
 
     public ModeloPanelPC() {
     }
@@ -81,6 +82,14 @@ public class ModeloPanelPC {
 
     public void setRespuesta(double respuesta) {
         this.respuesta = respuesta;
+    }
+
+    public double getRespuestaPorcentaje() {
+        return respuestaPorcentaje;
+    }
+
+    public void setRespuestaPorcentaje(double respuestaPorcentaje) {
+        this.respuestaPorcentaje = respuestaPorcentaje;
     }
     
     

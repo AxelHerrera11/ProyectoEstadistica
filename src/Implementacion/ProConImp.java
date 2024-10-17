@@ -14,17 +14,22 @@ public class ProConImp implements IProbabilidadCondicional {
             double iPAB;
             double iPB;
             double iRespuesta;
+            double iRespuestaPorcentaje;
+            String aproximacion;
 
             iPAB = nAB / nN1;
             iPB = nB / nN2;
 
             iRespuesta = iPAB / iPB;
+            aproximacion = String.format("%.2f", iRespuesta);
+            iRespuestaPorcentaje = ((Double.parseDouble(aproximacion))  * 100);
 
             modelo.setpAB(iPAB);
             modelo.setpB(iPB);
             modelo.setRespuesta(iRespuesta);
+            modelo.setRespuestaPorcentaje(iRespuestaPorcentaje);
         } catch (Exception e) {
-            System.out.println("hola");
+            System.out.println("Error al realizar la operacion " + e.getMessage());
         }
 
         return modelo;
