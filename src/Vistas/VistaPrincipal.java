@@ -64,6 +64,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnAceptar = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        btnEliminarProblema = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         Degradado = new javax.swing.JLabel();
         Fondo1 = new javax.swing.JLabel();
         Fondo2 = new javax.swing.JLabel();
@@ -178,6 +180,18 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         PanelFondoMenu.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 200, 50));
 
+        btnEliminarProblema.setBackground(new java.awt.Color(74, 144, 226));
+        btnEliminarProblema.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminarProblema.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Eliminar Problema");
+        btnEliminarProblema.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 50));
+
+        PanelFondoMenu.add(btnEliminarProblema, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 350, 200, 50));
+
         Degradado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/DegradadoNegro.png"))); // NOI18N
         PanelFondoMenu.add(Degradado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 720));
 
@@ -186,7 +200,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         Fondo1.setOpaque(true);
         PanelFondoMenu.add(Fondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 720));
 
-        Fondo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoProbabilidadCondicional.png"))); // NOI18N
+        Fondo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoPCFormula.png"))); // NOI18N
         PanelFondoMenu.add(Fondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 720));
 
         Fondo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoLeyMultiplicativa.png"))); // NOI18N
@@ -269,6 +283,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     public javax.swing.JPanel btn2;
     public javax.swing.JPanel btn3;
     public javax.swing.JPanel btnAceptar;
+    public javax.swing.JPanel btnEliminarProblema;
     public javax.swing.JPanel btnInicio;
     public javax.swing.JPanel contenedor;
     public javax.swing.JLabel jLabel1;
@@ -277,6 +292,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     public javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JLabel lbBtn1;
     public javax.swing.JLabel lbBtn1Degradado;
@@ -294,6 +310,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btn3.addMouseListener(controlador);
         btnInicio.addMouseListener(controlador);
         btnAceptar.addMouseListener(controlador);
+        btnEliminarProblema.addMouseListener(controlador);
     }
     
 //    public void setControlador2(ControladorVistaPrincipal controlador2){

@@ -2,6 +2,7 @@ package Controlador;
 
 import Implementacion.ProConImp;
 import Modelo.ModeloPanelPC;
+import Modelo.ModeloVistaPrincipal;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -14,7 +15,7 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.text.DecimalFormat;
 
-public class ControladorPanelPC implements ActionListener, WindowListener, MouseListener, KeyListener {
+public class ControladorPanelPC implements ActionListener, MouseListener, KeyListener {
 
     Modelo.ModeloPanelPC modelo;
     ProConImp implementacion = new ProConImp();
@@ -85,44 +86,12 @@ public class ControladorPanelPC implements ActionListener, WindowListener, Mouse
     }
 
     @Override
-    public void windowOpened(WindowEvent e) {
-
-    }
-
-    @Override
-    public void windowClosing(WindowEvent e) {
-
-    }
-
-    @Override
-    public void windowClosed(WindowEvent e) {
-
-    }
-
-    @Override
-    public void windowIconified(WindowEvent e) {
-
-    }
-
-    @Override
-    public void windowDeiconified(WindowEvent e) {
-
-    }
-
-    @Override
-    public void windowActivated(WindowEvent e) {
-
-    }
-
-    @Override
-    public void windowDeactivated(WindowEvent e) {
-
-    }
-
-    @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getComponent().equals(modelo.getVistaPC().btnResolver)) {
             realizarProcedimiento();
+        } else if(e.getComponent().equals(modelo.getVistaPC().btnMostrarProblema)){
+            ModeloVistaPrincipal modeloVP = new ModeloVistaPrincipal();
+            modelo.getVistaPC().txtaDescripcionProblema.setText(modeloVP.getTextoProblema());
         }
     }
 
@@ -175,12 +144,21 @@ public class ControladorPanelPC implements ActionListener, WindowListener, Mouse
 
     @Override
     public void mouseEntered(MouseEvent e) {
+        if (e.getComponent().equals(modelo.getVistaPC().btnMostrarProblema)) {
+            modelo.getVistaPC().btnMostrarProblema.setBackground(new Color(58, 116, 185));
+        } else if (e.getComponent().equals(modelo.getVistaPC().btnResolver)) {
+            modelo.getVistaPC().btnResolver.setBackground(new Color(58, 116, 185));
+        }
 
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-
+        if (e.getComponent().equals(modelo.getVistaPC().btnMostrarProblema)) {
+            modelo.getVistaPC().btnMostrarProblema.setBackground(new Color(74, 144, 226));
+        } else if (e.getComponent().equals(modelo.getVistaPC().btnResolver)) {
+            modelo.getVistaPC().btnResolver.setBackground(new Color(74, 144, 226));
+        }
     }
 
     @Override

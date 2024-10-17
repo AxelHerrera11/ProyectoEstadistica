@@ -1,5 +1,6 @@
 package Controlador;
 
+import Modelo.ModeloPanelPC;
 import Modelo.ModeloVistaPrincipal;
 import Vistas.PanelLeyMultiplicativa;
 import Vistas.PanelProbabilidadCondicional;
@@ -76,12 +77,22 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getComponent().equals(modelo.getVistaP().btn2)) {
+            modelo.setTextoProblema(modelo.getVistaP().txtaDescripcionProblema.getText());
+            System.out.println(modelo.getTextoProblema());
+//            ModeloPanelPC modeloPC = new ModeloPanelPC();
+//            modeloPC.setTextoProblema(modelo.getTextoProblema());
+//            System.out.println("Panel texto: " + modeloPC.getTextoProblema());
+//            ControladorPanelPC controladorPC = new ControladorPanelPC(modeloPC);
+//            controladorPC.ponerTextoProblema(modeloPC.getTextoProblema());
+                    
+            
             Vistas.PanelProbabilidadCondicional panelPro = new PanelProbabilidadCondicional();
             MostrarPanel(panelPro);
         } else if (e.getComponent().equals(modelo.getVistaP().btnInicio)) {
             MostrarPanel(modelo.getVistaP().PanelFondoMenu);
             System.out.println("Inicio Mostrado");
             modelo.getVistaP().btnAceptar.setVisible(true);
+            modelo.getVistaP().btnEliminarProblema.setVisible(true);
             modelo.getVistaP().btn1.setVisible(false);
             modelo.getVistaP().btn2.setVisible(false);
             modelo.getVistaP().btn3.setVisible(false);
@@ -102,6 +113,9 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
             modelo.getVistaP().bordeBtn2.setVisible(false);
             modelo.getVistaP().bordeBtn3.setVisible(false);
             modelo.getVistaP().btnAceptar.setVisible(false);
+            modelo.getVistaP().btnEliminarProblema.setVisible(false);
+        } else if (e.getComponent().equals(modelo.getVistaP().btnEliminarProblema)){
+            modelo.getVistaP().txtaDescripcionProblema.setText("");
         }
     }
 
@@ -160,6 +174,8 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
             modelo.getVistaP().bordeBtn3.setVisible(false);
         } else if (e.getComponent().equals(modelo.getVistaP().btnAceptar)) {
             modelo.getVistaP().btnAceptar.setBackground(new Color(58, 116, 185));
+        } else if (e.getComponent().equals(modelo.getVistaP().btnEliminarProblema)) {
+            modelo.getVistaP().btnEliminarProblema.setBackground(new Color(58, 116, 185));
         }
     }
 
@@ -178,6 +194,8 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
             modelo.getVistaP().btnAceptar.setBackground(new Color(74, 144, 226));
         } else if (e.getComponent().equals(modelo.getVistaP().btnInicio)) {
             modelo.getVistaP().btnInicio.setBackground(new Color(51, 51, 51));
+        } else if (e.getComponent().equals(modelo.getVistaP().btnEliminarProblema)) {
+            modelo.getVistaP().btnEliminarProblema.setBackground(new Color(74, 144, 226));
         }
     }
 

@@ -12,6 +12,7 @@ public class ModeloPanelPC {
     private double pB;
     private double respuesta;
     private double respuestaPorcentaje;
+    private static String textoProblema;
 
     public ModeloPanelPC() {
     }
@@ -90,6 +91,14 @@ public class ModeloPanelPC {
 
     public void setRespuestaPorcentaje(double respuestaPorcentaje) {
         this.respuestaPorcentaje = respuestaPorcentaje;
+    }
+
+    public String getTextoProblema() {
+        return textoProblema;
+    }
+
+    public void setTextoProblema(String textoProblema) {
+        this.textoProblema = textoProblema;
     }
     
     

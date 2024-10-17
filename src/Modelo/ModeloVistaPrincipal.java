@@ -4,6 +4,7 @@ import Vistas.VistaPrincipal;
 
 public class ModeloVistaPrincipal {
     VistaPrincipal vistaP;
+    private static String textoProblema;
 
 
     public ModeloVistaPrincipal() {
@@ -19,6 +20,14 @@ public class ModeloVistaPrincipal {
 
     public void setVistaP(VistaPrincipal vistaP) {
         this.vistaP = vistaP;
+    }
+
+    public String getTextoProblema() {
+        return textoProblema;
+    }
+
+    public void setTextoProblema(String textoProblema) {
+        ModeloVistaPrincipal.textoProblema = textoProblema;
     }
     
     

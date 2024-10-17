@@ -27,9 +27,25 @@ public class PanelLeyMultiplicativa extends javax.swing.JPanel {
     private void initComponents() {
 
         FondoPanel = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtaDescripcionProblema = new javax.swing.JTextArea();
         Fondo = new javax.swing.JLabel();
 
         FondoPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
+
+        txtaDescripcionProblema.setBackground(new java.awt.Color(255, 255, 255));
+        txtaDescripcionProblema.setColumns(20);
+        txtaDescripcionProblema.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtaDescripcionProblema.setLineWrap(true);
+        txtaDescripcionProblema.setRows(5);
+        txtaDescripcionProblema.setWrapStyleWord(true);
+        txtaDescripcionProblema.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
+        txtaDescripcionProblema.setOpaque(false);
+        jScrollPane2.setViewportView(txtaDescripcionProblema);
+
+        FondoPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 990, 140));
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoLeyMultiplicativa.png"))); // NOI18N
         FondoPanel.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 720));
@@ -50,5 +66,7 @@ public class PanelLeyMultiplicativa extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
     private javax.swing.JPanel FondoPanel;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea txtaDescripcionProblema;
     // End of variables declaration//GEN-END:variables
 }
