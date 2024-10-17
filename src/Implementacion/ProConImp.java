@@ -63,7 +63,6 @@ public class ProConImp implements IProbabilidadCondicional {
             parrafo.add("P(A|B) = P(A∩B)/P(B) = (nA∩B/N)/(nB/N) = (" + nAB + "/"+ nN1 +")/(" + nB + "/"+ nN2 + ") = " + pAB +"/" + pB + " = " + respuesta + " = " + respuestaPorcentaje);
             
             documento.open();
-//            documento.add(new Chunk(""));
             documento.add(parrafo);
             documento.close();
             System.out.println("PDF creado");
