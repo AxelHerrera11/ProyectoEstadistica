@@ -49,6 +49,8 @@ public class PanelProbabilidadCondicional extends javax.swing.JPanel {
         txtaDescripcionProblema = new javax.swing.JTextArea();
         btnResolver = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        btnPDF = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         txtAB = new javax.swing.JTextField();
         txtN1 = new javax.swing.JTextField();
         txtB = new javax.swing.JTextField();
@@ -101,6 +103,18 @@ public class PanelProbabilidadCondicional extends javax.swing.JPanel {
         btnResolver.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 50));
 
         FondoPanel.add(btnResolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 660, 150, 50));
+
+        btnPDF.setBackground(new java.awt.Color(74, 144, 226));
+        btnPDF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPDF.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Exportar a PDF");
+        btnPDF.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 50));
+
+        FondoPanel.add(btnPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 660, 180, 50));
 
         txtAB.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         txtAB.setForeground(new java.awt.Color(102, 102, 102));
@@ -168,9 +182,11 @@ public class PanelProbabilidadCondicional extends javax.swing.JPanel {
     private javax.swing.JLabel Fondo;
     private javax.swing.JPanel FondoPanel;
     public javax.swing.JPanel btnMostrarProblema;
+    public javax.swing.JPanel btnPDF;
     public javax.swing.JPanel btnResolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     public javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTextField txtAB;
     public javax.swing.JTextField txtB;
@@ -194,5 +210,6 @@ public class PanelProbabilidadCondicional extends javax.swing.JPanel {
         txtN2.addKeyListener(controlador);
         btnResolver.addKeyListener(controlador);
         btnMostrarProblema.addMouseListener(controlador);
+        btnPDF.addMouseListener(controlador);
     }
 }

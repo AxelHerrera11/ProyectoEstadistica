@@ -37,6 +37,28 @@ public class ControladorPanelPC implements ActionListener, MouseListener, KeyLis
         modelo.getVistaPC().txtRespuesta.setText(String.format("%.2f", model.getRespuesta()));
         modelo.getVistaPC().txtRespuestaPorcentaje.setText(String.format("%.0f", model.getRespuestaPorcentaje()) + "%");
     }
+    
+    public void exportarPDF(){
+        ModeloVistaPrincipal modeloVP = new ModeloVistaPrincipal();
+        String textProblema = modeloVP.getTextoProblema();
+//        String nAB = String.valueOf(modelo.getnAB());
+//        String nN1 = String.valueOf(modelo.getnN1());
+//        String nB = String.valueOf(modelo.getnB());
+//        String nN2 = String.valueOf(modelo.getnN2());
+//        String pAB = String.valueOf(modelo.getpAB());
+//        String pB = String.valueOf(modelo.getpB());
+//        String respuesta = String.valueOf(modelo.getRespuesta());
+//        String respuestaDecimal = String.valueOf(modelo.getRespuestaPorcentaje());
+        String nAB = modelo.getVistaPC().txtAB.getText();
+        String nN1 = modelo.getVistaPC().txtN1.getText();
+        String nB = modelo.getVistaPC().txtB.getText();
+        String nN2 = modelo.getVistaPC().txtN2.getText();
+        String pAB = modelo.getVistaPC().txtPAB.getText();
+        String pB = modelo.getVistaPC().txtPB.getText();
+        String respuesta = modelo.getVistaPC().txtRespuesta.getText();
+        String respuestaDecimal = modelo.getVistaPC().txtRespuestaPorcentaje.getText();
+        ModeloPanelPC model = implementacion.exportarPDF(textProblema, nAB, nN1, nB, nN2, pAB, pB, respuesta, respuestaDecimal);
+    }
 
     public void validarNumero(KeyEvent e) {
         int key = e.getKeyChar();
@@ -92,6 +114,8 @@ public class ControladorPanelPC implements ActionListener, MouseListener, KeyLis
         } else if(e.getComponent().equals(modelo.getVistaPC().btnMostrarProblema)){
             ModeloVistaPrincipal modeloVP = new ModeloVistaPrincipal();
             modelo.getVistaPC().txtaDescripcionProblema.setText(modeloVP.getTextoProblema());
+        } else if(e.getComponent().equals(modelo.getVistaPC().btnPDF)){
+            exportarPDF();
         }
     }
 
