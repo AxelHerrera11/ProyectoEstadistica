@@ -11,9 +11,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
-import java.text.DecimalFormat;
 
 public class ControladorPanelPC implements ActionListener, MouseListener, KeyListener {
 
@@ -41,14 +38,7 @@ public class ControladorPanelPC implements ActionListener, MouseListener, KeyLis
     public void exportarPDF(){
         ModeloVistaPrincipal modeloVP = new ModeloVistaPrincipal();
         String textProblema = modeloVP.getTextoProblema();
-//        String nAB = String.valueOf(modelo.getnAB());
-//        String nN1 = String.valueOf(modelo.getnN1());
-//        String nB = String.valueOf(modelo.getnB());
-//        String nN2 = String.valueOf(modelo.getnN2());
-//        String pAB = String.valueOf(modelo.getpAB());
-//        String pB = String.valueOf(modelo.getpB());
-//        String respuesta = String.valueOf(modelo.getRespuesta());
-//        String respuestaDecimal = String.valueOf(modelo.getRespuestaPorcentaje());
+
         String nAB = modelo.getVistaPC().txtAB.getText();
         String nN1 = modelo.getVistaPC().txtN1.getText();
         String nB = modelo.getVistaPC().txtB.getText();
