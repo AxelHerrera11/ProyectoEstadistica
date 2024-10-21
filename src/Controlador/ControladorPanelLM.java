@@ -1,13 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Controlador;
 
-/**
- *
- * @author jhosu
- */
+import Implementacion.ProConImp;
+import Modelo.ModeloPanelLM;
+
 public class ControladorPanelLM {
+
+    Modelo.ModeloPanelLM modelo;
+    ProConImp implementacion = new ProConImp();
+
+    public ControladorPanelLM(ModeloPanelLM modelo) {
+        this.modelo = modelo;
+    }
     
+    public void realizarProcedimiento() {
+        
+    }
+    
+    public void exportarPDF() {
+        
+    }
+
 }
