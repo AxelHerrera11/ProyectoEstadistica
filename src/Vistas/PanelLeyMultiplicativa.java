@@ -1,15 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package Vistas;
 
+import Controlador.ControladorPanelLM;
+import Modelo.ModeloPanelLM;
 import java.awt.Color;
 
-/**
- *
- * @author axels
- */
+
 public class PanelLeyMultiplicativa extends javax.swing.JPanel {
 
     /**
@@ -17,15 +12,19 @@ public class PanelLeyMultiplicativa extends javax.swing.JPanel {
      */
     public PanelLeyMultiplicativa() {
         initComponents();
-        
-        this.txtnB.setBackground(new Color(0,0,0,1));
-        this.txtN1.setBackground(new Color(0,0,0,1));
-        this.txtnAB.setBackground(new Color(0,0,0,1));
-        this.txtN2.setBackground(new Color(0,0,0,1));
-        this.txtResultnBnAB.setBackground(new Color(0,0,0,1));
-        this.txtResultNN.setBackground(new Color(0,0,0,1));
-        this.txtResultadoDecimal.setBackground(new Color(0,0,0,1));
-        this.txtResultadoPorcentaje.setBackground(new Color(0,0,0,1));
+        Modelo.ModeloPanelLM modelo = new ModeloPanelLM(this);
+        Controlador.ControladorPanelLM controlador = new ControladorPanelLM(modelo);
+        setControlador(controlador);
+
+        this.txtnB.setBackground(new Color(0, 0, 0, 1));
+        this.txtN1.setBackground(new Color(0, 0, 0, 1));
+        this.txtnAB.setBackground(new Color(0, 0, 0, 1));
+        this.txtN2.setBackground(new Color(0, 0, 0, 1));
+        this.txtResultnBnAB.setBackground(new Color(0, 0, 0, 1));
+        this.txtResultNN.setBackground(new Color(0, 0, 0, 1));
+        this.txtResultadoDecimal.setBackground(new Color(0, 0, 0, 1));
+        this.txtResultadoPorcentaje.setBackground(new Color(0, 0, 0, 1));
+        this.btnPDF.setVisible(false);
     }
 
     /**
@@ -48,6 +47,12 @@ public class PanelLeyMultiplicativa extends javax.swing.JPanel {
         txtResultNN = new javax.swing.JTextField();
         txtResultadoDecimal = new javax.swing.JTextField();
         txtResultadoPorcentaje = new javax.swing.JTextField();
+        btnResolver = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        btnPDF = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        btnMostrarProblema = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         Fondo = new javax.swing.JLabel();
 
         FondoPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -124,6 +129,36 @@ public class PanelLeyMultiplicativa extends javax.swing.JPanel {
         txtResultadoPorcentaje.setBorder(null);
         FondoPanel.add(txtResultadoPorcentaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 470, 100, 40));
 
+        btnResolver.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnResolver.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        btnResolver.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Resolver");
+        btnResolver.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 50));
+
+        FondoPanel.add(btnResolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 650, 110, 50));
+
+        btnPDF.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        btnPDF.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Exportar PDF");
+        btnPDF.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 50));
+
+        FondoPanel.add(btnPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 650, 110, 50));
+
+        btnMostrarProblema.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Mostrar Problema");
+        btnMostrarProblema.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 40));
+
+        FondoPanel.add(btnMostrarProblema, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 160, 40));
+
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoLeyMultiplicativa.png"))); // NOI18N
         FondoPanel.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 720));
 
@@ -151,6 +186,12 @@ public class PanelLeyMultiplicativa extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
     private javax.swing.JPanel FondoPanel;
+    public javax.swing.JPanel btnMostrarProblema;
+    public javax.swing.JPanel btnPDF;
+    public javax.swing.JPanel btnResolver;
+    public javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTextField txtN1;
     public javax.swing.JTextField txtN2;
@@ -158,8 +199,24 @@ public class PanelLeyMultiplicativa extends javax.swing.JPanel {
     public javax.swing.JTextField txtResultadoDecimal;
     public javax.swing.JTextField txtResultadoPorcentaje;
     public javax.swing.JTextField txtResultnBnAB;
-    private javax.swing.JTextArea txtaDescripcionProblema;
+    public javax.swing.JTextArea txtaDescripcionProblema;
     public javax.swing.JTextField txtnAB;
     public javax.swing.JTextField txtnB;
     // End of variables declaration//GEN-END:variables
+
+    public void setControlador(ControladorPanelLM controlador) {
+        btnResolver.addMouseListener(controlador);
+        txtnB.addMouseListener(controlador);
+        txtN1.addMouseListener(controlador);
+        txtN2.addMouseListener(controlador);
+        txtnAB.addMouseListener(controlador);
+        txtnB.addKeyListener(controlador);
+        txtN1.addKeyListener(controlador);
+        txtnAB.addKeyListener(controlador);
+        txtN2.addKeyListener(controlador);
+        btnResolver.addKeyListener(controlador);
+        btnPDF.addMouseListener(controlador);
+        btnMostrarProblema.addMouseListener(controlador);
+        
+    }
 }
