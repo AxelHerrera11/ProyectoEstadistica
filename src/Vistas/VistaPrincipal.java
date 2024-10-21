@@ -25,6 +25,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         Controlador.ControladorVistaPrincipal controlador = new ControladorVistaPrincipal(modelo);
 
         setControlador(controlador);
+        this.btnEliminarProblema.setVisible(false);
         
     }
     
@@ -39,6 +40,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         FondoPanel = new javax.swing.JPanel();
+        PanelHeader = new javax.swing.JPanel();
+        btnCerrarPrograma = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
         PanelMenuVertical = new javax.swing.JPanel();
         btnInicio = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -73,9 +77,26 @@ public class VistaPrincipal extends javax.swing.JFrame {
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
 
         FondoPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        PanelHeader.setOpaque(false);
+        PanelHeader.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnCerrarPrograma.setBackground(new java.awt.Color(51, 51, 51));
+        btnCerrarPrograma.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCerrarPrograma.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setFont(new java.awt.Font("Tw Cen MT", 0, 48)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnExit.png"))); // NOI18N
+        btnCerrarPrograma.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+
+        PanelHeader.add(btnCerrarPrograma, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+
+        FondoPanel.add(PanelHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 50));
 
         PanelMenuVertical.setBackground(new java.awt.Color(51, 51, 51));
         PanelMenuVertical.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -167,25 +188,25 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         PanelFondoMenu.add(btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 580, 200, 120));
 
-        btnAceptar.setBackground(new java.awt.Color(74, 144, 226));
+        btnAceptar.setBackground(new java.awt.Color(51, 51, 51));
         btnAceptar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAceptar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setBackground(new java.awt.Color(74, 144, 226));
         jLabel5.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("ACEPTAR");
+        jLabel5.setText("Aceptar");
         btnAceptar.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 50));
 
         PanelFondoMenu.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 200, 50));
 
-        btnEliminarProblema.setBackground(new java.awt.Color(74, 144, 226));
+        btnEliminarProblema.setBackground(new java.awt.Color(51, 51, 51));
         btnEliminarProblema.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEliminarProblema.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Eliminar Problema");
         btnEliminarProblema.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 50));
@@ -275,6 +296,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     public javax.swing.JLabel Fondo3;
     private javax.swing.JPanel FondoPanel;
     public javax.swing.JPanel PanelFondoMenu;
+    public javax.swing.JPanel PanelHeader;
     private javax.swing.JPanel PanelMenuVertical;
     public javax.swing.JLabel bordeBtn1;
     public javax.swing.JLabel bordeBtn2;
@@ -283,6 +305,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     public javax.swing.JPanel btn2;
     public javax.swing.JPanel btn3;
     public javax.swing.JPanel btnAceptar;
+    public javax.swing.JPanel btnCerrarPrograma;
     public javax.swing.JPanel btnEliminarProblema;
     public javax.swing.JPanel btnInicio;
     public javax.swing.JPanel contenedor;
@@ -293,6 +316,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     public javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JLabel lbBtn1;
     public javax.swing.JLabel lbBtn1Degradado;
@@ -311,6 +335,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btnInicio.addMouseListener(controlador);
         btnAceptar.addMouseListener(controlador);
         btnEliminarProblema.addMouseListener(controlador);
+        btnCerrarPrograma.addMouseListener(controlador);
+        PanelHeader.addMouseListener(controlador);
+        PanelHeader.addMouseMotionListener(controlador);
+        txtaDescripcionProblema.addMouseListener(controlador);
+        btnAceptar.addKeyListener(controlador);
     }
     
 //    public void setControlador2(ControladorVistaPrincipal controlador2){

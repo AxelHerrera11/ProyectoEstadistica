@@ -31,6 +31,7 @@ public class PanelProbabilidadCondicional extends javax.swing.JPanel {
         this.txtPB.setBackground(new Color(0,0,0,1));
         this.txtRespuesta.setBackground(new Color(0,0,0,1));
         this.txtRespuestaPorcentaje.setBackground(new Color(0,0,0,1));
+        this.btnPDF.setVisible(false);
     }
 
     /**
@@ -66,12 +67,12 @@ public class PanelProbabilidadCondicional extends javax.swing.JPanel {
 
         FondoPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnMostrarProblema.setBackground(new java.awt.Color(74, 144, 226));
+        btnMostrarProblema.setBackground(new java.awt.Color(51, 51, 51));
         btnMostrarProblema.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMostrarProblema.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Mostrar Problema");
         btnMostrarProblema.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 40));
@@ -92,24 +93,25 @@ public class PanelProbabilidadCondicional extends javax.swing.JPanel {
 
         FondoPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 990, 140));
 
-        btnResolver.setBackground(new java.awt.Color(74, 144, 226));
+        btnResolver.setBackground(new java.awt.Color(51, 51, 51));
         btnResolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnResolver.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Resolver");
         btnResolver.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 50));
 
         FondoPanel.add(btnResolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 660, 150, 50));
 
-        btnPDF.setBackground(new java.awt.Color(74, 144, 226));
+        btnPDF.setBackground(new java.awt.Color(51, 51, 51));
         btnPDF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnPDF.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Exportar a PDF");
         btnPDF.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 50));

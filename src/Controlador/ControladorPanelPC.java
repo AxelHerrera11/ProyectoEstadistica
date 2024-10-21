@@ -33,6 +33,7 @@ public class ControladorPanelPC implements ActionListener, MouseListener, KeyLis
         modelo.getVistaPC().txtPB.setText(String.format("%.2f", model.getpB()));
         modelo.getVistaPC().txtRespuesta.setText(String.format("%.2f", model.getRespuesta()));
         modelo.getVistaPC().txtRespuestaPorcentaje.setText(String.format("%.0f", model.getRespuestaPorcentaje()) + "%");
+        modelo.getVistaPC().btnPDF.setVisible(true);
     }
     
     public void exportarPDF(){
@@ -159,9 +160,11 @@ public class ControladorPanelPC implements ActionListener, MouseListener, KeyLis
     @Override
     public void mouseEntered(MouseEvent e) {
         if (e.getComponent().equals(modelo.getVistaPC().btnMostrarProblema)) {
-            modelo.getVistaPC().btnMostrarProblema.setBackground(new Color(58, 116, 185));
+            modelo.getVistaPC().btnMostrarProblema.setBackground(new Color(102,102,102));
         } else if (e.getComponent().equals(modelo.getVistaPC().btnResolver)) {
-            modelo.getVistaPC().btnResolver.setBackground(new Color(58, 116, 185));
+            modelo.getVistaPC().btnResolver.setBackground(new Color(102,102,102));
+        } else if (e.getComponent().equals(modelo.getVistaPC().btnPDF)) {
+            modelo.getVistaPC().btnPDF.setBackground(new Color(102,102,102));
         }
 
     }
@@ -169,9 +172,11 @@ public class ControladorPanelPC implements ActionListener, MouseListener, KeyLis
     @Override
     public void mouseExited(MouseEvent e) {
         if (e.getComponent().equals(modelo.getVistaPC().btnMostrarProblema)) {
-            modelo.getVistaPC().btnMostrarProblema.setBackground(new Color(74, 144, 226));
+            modelo.getVistaPC().btnMostrarProblema.setBackground(new Color(51,51,51));
         } else if (e.getComponent().equals(modelo.getVistaPC().btnResolver)) {
-            modelo.getVistaPC().btnResolver.setBackground(new Color(74, 144, 226));
+            modelo.getVistaPC().btnResolver.setBackground(new Color(51,51,51));
+        } else if (e.getComponent().equals(modelo.getVistaPC().btnPDF)) {
+            modelo.getVistaPC().btnPDF.setBackground(new Color(51,51,51));
         }
     }
 
