@@ -21,6 +21,7 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
 
     ModeloVistaPrincipal modelo;
     
+    boolean validacionBtnEP = false;
     int xMouse, yMouse;
 
     public ControladorVistaPrincipal(ModeloVistaPrincipal modelo) {
@@ -50,6 +51,7 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
                 modelo.getVistaP().bordeBtn3.setVisible(false);
                 modelo.getVistaP().btnAceptar.setVisible(false);
                 modelo.getVistaP().btnEliminarProblema.setVisible(false);
+                validacionBtnEP = true;
             }
     }
 
@@ -114,6 +116,7 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
             modelo.getVistaP().Fondo2.setVisible(false);
             modelo.getVistaP().Fondo3.setVisible(false);
             modelo.getVistaP().Fondo1.setVisible(true);
+            validacionBtnEP = false;
         } else if (e.getComponent().equals(modelo.getVistaP().btn3)) {
             Vistas.PanelLeyMultiplicativa panelLey = new PanelLeyMultiplicativa();
             MostrarPanel(panelLey);
@@ -196,7 +199,7 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
         } else if (e.getComponent().equals(modelo.getVistaP().btnEliminarProblema)) {
             modelo.getVistaP().btnEliminarProblema.setBackground(new Color(102, 102, 102));
         } else if(e.getComponent().equals(modelo.getVistaP().txtaDescripcionProblema)){
-            if(modelo.getVistaP().txtaDescripcionProblema.getText().isEmpty()){
+            if(modelo.getVistaP().txtaDescripcionProblema.getText().isEmpty() || validacionBtnEP){
                 modelo.getVistaP().btnEliminarProblema.setVisible(false);
             } else{
                 modelo.getVistaP().btnEliminarProblema.setVisible(true);
@@ -225,7 +228,7 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
         } else if (e.getComponent().equals(modelo.getVistaP().btnCerrarPrograma)) {
             modelo.getVistaP().btnCerrarPrograma.setBackground(new Color(51, 51, 51));
         } else if(e.getComponent().equals(modelo.getVistaP().txtaDescripcionProblema)){
-            if(modelo.getVistaP().txtaDescripcionProblema.getText().isEmpty()){
+            if(modelo.getVistaP().txtaDescripcionProblema.getText().isEmpty() || validacionBtnEP){
                 modelo.getVistaP().btnEliminarProblema.setVisible(false);
             } else{
                 modelo.getVistaP().btnEliminarProblema.setVisible(true);
