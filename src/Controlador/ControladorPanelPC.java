@@ -16,10 +16,47 @@ public class ControladorPanelPC implements ActionListener, MouseListener, KeyLis
 
     Modelo.ModeloPanelPC modelo;
     ProConImp implementacion = new ProConImp();
-    
 
     public ControladorPanelPC(ModeloPanelPC modelo) {
         this.modelo = modelo;
+    }
+
+    public void validarBtnResolver() {
+        if (modelo.getVistaPC().lblBtnResolver.getText().equals("Resolver")) {
+            if (modelo.getVistaPC().txtAB.getText().equals("Ingrese Interseccion")
+                    || modelo.getVistaPC().txtN1.getText().equals("Ingrese N")
+                    || modelo.getVistaPC().txtB.getText().equals("Ingrese nB")
+                    || modelo.getVistaPC().txtN2.getText().equals("Ingrese N")
+                    || modelo.getVistaPC().txtAB.getText().isEmpty()
+                    || modelo.getVistaPC().txtN1.getText().isEmpty()
+                    || modelo.getVistaPC().txtB.getText().isEmpty()
+                    || modelo.getVistaPC().txtN2.getText().isEmpty()) {
+
+            } else {
+                realizarProcedimiento();
+                modelo.getVistaPC().lblBtnResolver.setText("Limpiar");
+            }
+        } else if (modelo.getVistaPC().lblBtnResolver.getText().equals("Limpiar")) {
+            
+            modelo.getVistaPC().txtAB.setText("");
+            modelo.getVistaPC().txtN1.setText("");
+            modelo.getVistaPC().txtB.setText("");
+            modelo.getVistaPC().txtN2.setText("");
+            textoPredeterminadoAB();
+            textoPredeterminadoN1();
+            textoPredeterminadoB();
+            textoPredeterminadoN2();
+            modelo.getVistaPC().txtPAB.setText("");
+            modelo.getVistaPC().txtPB.setText("");
+            modelo.getVistaPC().txtRespuesta.setText("");
+            modelo.getVistaPC().txtRespuestaPorcentaje.setText("");
+            modelo.getVistaPC().btnPDF.setVisible(false);
+            modelo.getVistaPC().txtAB.setEditable(true);
+            modelo.getVistaPC().txtN1.setEditable(true);
+            modelo.getVistaPC().txtB.setEditable(true);
+            modelo.getVistaPC().txtN2.setEditable(true);
+            modelo.getVistaPC().lblBtnResolver.setText("Resolver");
+        }
     }
 
     public void realizarProcedimiento() {
@@ -34,9 +71,13 @@ public class ControladorPanelPC implements ActionListener, MouseListener, KeyLis
         modelo.getVistaPC().txtRespuesta.setText(String.format("%.2f", model.getRespuesta()));
         modelo.getVistaPC().txtRespuestaPorcentaje.setText(String.format("%.0f", model.getRespuestaPorcentaje()) + "%");
         modelo.getVistaPC().btnPDF.setVisible(true);
+        modelo.getVistaPC().txtAB.setEditable(false);
+        modelo.getVistaPC().txtN1.setEditable(false);
+        modelo.getVistaPC().txtB.setEditable(false);
+        modelo.getVistaPC().txtN2.setEditable(false);
     }
-    
-    public void exportarPDF(){
+
+    public void exportarPDF() {
         ModeloVistaPrincipal modeloVP = new ModeloVistaPrincipal();
         String textProblema = modeloVP.getTextoProblema();
 
@@ -68,29 +109,29 @@ public class ControladorPanelPC implements ActionListener, MouseListener, KeyLis
             modelo.getVistaPC().txtB.setFont(new Font("Tw Cen MT", Font.PLAIN, 18));
         }
     }
-    
-    public void textoPredeterminadoN1(){
+
+    public void textoPredeterminadoN1() {
         if (modelo.getVistaPC().txtN1.getText().isEmpty()) {
-                modelo.getVistaPC().txtN1.setText("Ingrese N");
-                modelo.getVistaPC().txtN1.setForeground(new Color(102, 102, 102));
-                modelo.getVistaPC().txtN1.setFont(new Font("Tw Cen MT", Font.PLAIN, 18));
-            }
+            modelo.getVistaPC().txtN1.setText("Ingrese N");
+            modelo.getVistaPC().txtN1.setForeground(new Color(102, 102, 102));
+            modelo.getVistaPC().txtN1.setFont(new Font("Tw Cen MT", Font.PLAIN, 18));
+        }
     }
-    
-    public void textoPredeterminadoN2(){
+
+    public void textoPredeterminadoN2() {
         if (modelo.getVistaPC().txtN2.getText().isEmpty()) {
-                modelo.getVistaPC().txtN2.setText("Ingrese N");
-                modelo.getVistaPC().txtN2.setForeground(new Color(102, 102, 102));
-                modelo.getVistaPC().txtN2.setFont(new Font("Tw Cen MT", Font.PLAIN, 18));
-            }
+            modelo.getVistaPC().txtN2.setText("Ingrese N");
+            modelo.getVistaPC().txtN2.setForeground(new Color(102, 102, 102));
+            modelo.getVistaPC().txtN2.setFont(new Font("Tw Cen MT", Font.PLAIN, 18));
+        }
     }
-    
-    public void textoPredeterminadoAB(){
+
+    public void textoPredeterminadoAB() {
         if (modelo.getVistaPC().txtAB.getText().isEmpty()) {
-                modelo.getVistaPC().txtAB.setText("Ingrese Interseccion");
-                modelo.getVistaPC().txtAB.setForeground(new Color(102, 102, 102));
-                modelo.getVistaPC().txtAB.setFont(new Font("Tw Cen MT", Font.PLAIN, 18));
-            }
+            modelo.getVistaPC().txtAB.setText("Ingrese Interseccion");
+            modelo.getVistaPC().txtAB.setForeground(new Color(102, 102, 102));
+            modelo.getVistaPC().txtAB.setFont(new Font("Tw Cen MT", Font.PLAIN, 18));
+        }
     }
 
     @Override
@@ -101,11 +142,11 @@ public class ControladorPanelPC implements ActionListener, MouseListener, KeyLis
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getComponent().equals(modelo.getVistaPC().btnResolver)) {
-            realizarProcedimiento();
-        } else if(e.getComponent().equals(modelo.getVistaPC().btnMostrarProblema)){
+            validarBtnResolver();
+        } else if (e.getComponent().equals(modelo.getVistaPC().btnMostrarProblema)) {
             ModeloVistaPrincipal modeloVP = new ModeloVistaPrincipal();
             modelo.getVistaPC().txtaDescripcionProblema.setText(modeloVP.getTextoProblema());
-        } else if(e.getComponent().equals(modelo.getVistaPC().btnPDF)){
+        } else if (e.getComponent().equals(modelo.getVistaPC().btnPDF)) {
             exportarPDF();
         }
     }
@@ -160,11 +201,11 @@ public class ControladorPanelPC implements ActionListener, MouseListener, KeyLis
     @Override
     public void mouseEntered(MouseEvent e) {
         if (e.getComponent().equals(modelo.getVistaPC().btnMostrarProblema)) {
-            modelo.getVistaPC().btnMostrarProblema.setBackground(new Color(102,102,102));
+            modelo.getVistaPC().btnMostrarProblema.setBackground(new Color(102, 102, 102));
         } else if (e.getComponent().equals(modelo.getVistaPC().btnResolver)) {
-            modelo.getVistaPC().btnResolver.setBackground(new Color(102,102,102));
+            modelo.getVistaPC().btnResolver.setBackground(new Color(102, 102, 102));
         } else if (e.getComponent().equals(modelo.getVistaPC().btnPDF)) {
-            modelo.getVistaPC().btnPDF.setBackground(new Color(102,102,102));
+            modelo.getVistaPC().btnPDF.setBackground(new Color(102, 102, 102));
         }
 
     }
@@ -172,11 +213,11 @@ public class ControladorPanelPC implements ActionListener, MouseListener, KeyLis
     @Override
     public void mouseExited(MouseEvent e) {
         if (e.getComponent().equals(modelo.getVistaPC().btnMostrarProblema)) {
-            modelo.getVistaPC().btnMostrarProblema.setBackground(new Color(51,51,51));
+            modelo.getVistaPC().btnMostrarProblema.setBackground(new Color(51, 51, 51));
         } else if (e.getComponent().equals(modelo.getVistaPC().btnResolver)) {
-            modelo.getVistaPC().btnResolver.setBackground(new Color(51,51,51));
+            modelo.getVistaPC().btnResolver.setBackground(new Color(51, 51, 51));
         } else if (e.getComponent().equals(modelo.getVistaPC().btnPDF)) {
-            modelo.getVistaPC().btnPDF.setBackground(new Color(51,51,51));
+            modelo.getVistaPC().btnPDF.setBackground(new Color(51, 51, 51));
         }
     }
 
@@ -196,13 +237,17 @@ public class ControladorPanelPC implements ActionListener, MouseListener, KeyLis
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-            realizarProcedimiento();
+            if(modelo.getVistaPC().txtRespuestaPorcentaje.getText().isEmpty()){
+                validarBtnResolver();
+            } else{
+                exportarPDF();
+            }
         }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-
+        
     }
 
 }

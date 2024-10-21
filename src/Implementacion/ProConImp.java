@@ -77,7 +77,7 @@ public class ProConImp implements IProbabilidadCondicional {
 
             ejercicio.setAlignment(Paragraph.ALIGN_LEFT);
             ejercicio.add("P(A|B) = P(A∩B)/P(B) = (nA∩B/N)/(nB/N)\n");
-            ejercicio.add("P(A|B) = (" + nAB + "/"+ nN1 +")/(" + nB + "/"+ nN2 + ") = " + pAB +"/" + pB + " = " + respuesta + " = " + respuestaPorcentaje);
+            ejercicio.add("P(A|B) = P(A∩B)/P(B) = (" + nAB + "/"+ nN1 +")/(" + nB + "/"+ nN2 + ") = " + pAB +"/" + pB + " = " + respuesta + " = " + respuestaPorcentaje);
             
             documento.open();
             documento.add(header);

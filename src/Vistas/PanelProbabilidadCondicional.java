@@ -49,7 +49,7 @@ public class PanelProbabilidadCondicional extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         txtaDescripcionProblema = new javax.swing.JTextArea();
         btnResolver = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        lblBtnResolver = new javax.swing.JLabel();
         btnPDF = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         txtAB = new javax.swing.JTextField();
@@ -97,12 +97,12 @@ public class PanelProbabilidadCondicional extends javax.swing.JPanel {
         btnResolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnResolver.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Resolver");
-        btnResolver.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 50));
+        lblBtnResolver.setBackground(new java.awt.Color(255, 255, 255));
+        lblBtnResolver.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
+        lblBtnResolver.setForeground(new java.awt.Color(255, 255, 255));
+        lblBtnResolver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblBtnResolver.setText("Resolver");
+        btnResolver.add(lblBtnResolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 50));
 
         FondoPanel.add(btnResolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 660, 150, 50));
 
@@ -187,9 +187,9 @@ public class PanelProbabilidadCondicional extends javax.swing.JPanel {
     public javax.swing.JPanel btnPDF;
     public javax.swing.JPanel btnResolver;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     public javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JLabel lblBtnResolver;
     public javax.swing.JTextField txtAB;
     public javax.swing.JTextField txtB;
     public javax.swing.JTextField txtN1;
