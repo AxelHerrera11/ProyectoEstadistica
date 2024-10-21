@@ -21,6 +21,46 @@ public class ControladorPanelLM implements ActionListener, MouseListener, KeyLis
         this.modelo = modelo;
     }
 
+    public void validarBtnResolver() {
+        if (modelo.getVistaLM().lblResolver.getText().equals("Resolver")) {
+            if (modelo.getVistaLM().txtnB.getText().equals("Ingrese nB")
+                    || modelo.getVistaLM().txtN1.getText().equals("Ingrese N")
+                    || modelo.getVistaLM().txtnAB.getText().equals("Ingrese n(A|B)")
+                    || modelo.getVistaLM().txtN2.getText().equals("Ingrese N")
+                    || modelo.getVistaLM().txtnB.getText().isEmpty()
+                    || modelo.getVistaLM().txtN1.getText().isEmpty()
+                    || modelo.getVistaLM().txtnAB.getText().isEmpty()
+                    || modelo.getVistaLM().txtN2.getText().isEmpty()) {
+
+            } else {
+                realizarProcedimiento();
+                modelo.getVistaLM().lblResolver.setText("Limpiar");
+            }
+
+        } else if (modelo.getVistaLM().lblResolver.getText().equals("Limpiar")) {
+
+            modelo.getVistaLM().txtnB.setText("");
+            modelo.getVistaLM().txtN1.setText("");
+            modelo.getVistaLM().txtnAB.setText("");
+            modelo.getVistaLM().txtN2.setText("");
+            textoPredeterminadonB();
+            textoPredeterminadoN1();
+            textoPredeterminadoAB();
+            textoPrederminadoN2();
+            modelo.getVistaLM().txtResultnBnAB.setText("");
+            modelo.getVistaLM().txtResultNN.setText("");
+            modelo.getVistaLM().txtResultadoDecimal.setText("");
+            modelo.getVistaLM().txtResultadoPorcentaje.setText("");
+            modelo.getVistaLM().btnPDF.setVisible(false);
+            modelo.getVistaLM().txtnB.setEditable(true);
+            modelo.getVistaLM().txtN1.setEditable(true);
+            modelo.getVistaLM().txtnAB.setEditable(true);
+            modelo.getVistaLM().txtN2.setEditable(true);
+            modelo.getVistaLM().lblResolver.setText("Resolver");
+
+        }
+    }
+
     public void realizarProcedimiento() {
         double nB = Double.parseDouble(modelo.getVistaLM().txtnB.getText());
         double N1 = Double.parseDouble(modelo.getVistaLM().txtN1.getText());
@@ -31,8 +71,12 @@ public class ControladorPanelLM implements ActionListener, MouseListener, KeyLis
         modelo.getVistaLM().txtResultnBnAB.setText(String.format("%.2f", model.getResultadonBnAB()));
         modelo.getVistaLM().txtResultNN.setText(String.format("%.2f", model.getResultadoNN()));
         modelo.getVistaLM().txtResultadoDecimal.setText(String.format("%.2f", model.getResultadoDecimal()));
-        modelo.getVistaLM().txtResultadoPorcentaje.setText(String.format("%.2f", model.getResultadoPorcentaje()));
+        modelo.getVistaLM().txtResultadoPorcentaje.setText(String.format("%.0f", model.getResultadoPorcentaje()) + "%");
         modelo.getVistaLM().btnPDF.setVisible(true);
+        modelo.getVistaLM().txtnB.setEditable(false);
+        modelo.getVistaLM().txtN1.setEditable(false);
+        modelo.getVistaLM().txtnAB.setEditable(false);
+        modelo.getVistaLM().txtN2.setEditable(false);
     }
 
     public void exportarPDF() {
@@ -107,7 +151,7 @@ public class ControladorPanelLM implements ActionListener, MouseListener, KeyLis
     public void mouseClicked(MouseEvent e) {
 
         if (e.getComponent().equals(modelo.getVistaLM().btnResolver)) {
-            realizarProcedimiento();
+            validarBtnResolver();
         } else if (e.getComponent().equals(modelo.getVistaLM().btnMostrarProblema)) {
             ModeloVistaPrincipal modeloVP = new ModeloVistaPrincipal();
             modelo.getVistaLM().txtaDescripcionProblema.setText(modeloVP.getTextoProblema());
@@ -167,22 +211,22 @@ public class ControladorPanelLM implements ActionListener, MouseListener, KeyLis
     @Override
     public void mouseEntered(MouseEvent e) {
         if (e.getComponent().equals(modelo.getVistaLM().btnMostrarProblema)) {
-            modelo.getVistaLM().btnMostrarProblema.setBackground(new Color(58, 116, 185));
+            modelo.getVistaLM().btnMostrarProblema.setBackground(new Color(102, 102, 102));
         } else if (e.getComponent().equals(modelo.getVistaLM().btnResolver)) {
-            modelo.getVistaLM().btnResolver.setBackground(new Color(58, 116, 185));
-        } else if (e.getComponent().equals(modelo.getVistaLM().btnPDF)){
-            modelo.getVistaLM().btnPDF.setBackground(new Color(58, 116, 185));        
+            modelo.getVistaLM().btnResolver.setBackground(new Color(102, 102, 102));
+        } else if (e.getComponent().equals(modelo.getVistaLM().btnPDF)) {
+            modelo.getVistaLM().btnPDF.setBackground(new Color(102, 102, 102));
         }
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
         if (e.getComponent().equals(modelo.getVistaLM().btnMostrarProblema)) {
-            modelo.getVistaLM().btnMostrarProblema.setBackground(new Color(74, 144, 226));
+            modelo.getVistaLM().btnMostrarProblema.setBackground(new Color(51, 51, 51));
         } else if (e.getComponent().equals(modelo.getVistaLM().btnResolver)) {
-            modelo.getVistaLM().btnResolver.setBackground(new Color(74, 144, 226));
-        } else if (e.getComponent().equals(modelo.getVistaLM().btnPDF)){
-            modelo.getVistaLM().btnPDF.setBackground(new Color(74, 144,226));
+            modelo.getVistaLM().btnResolver.setBackground(new Color(51, 51, 51));
+        } else if (e.getComponent().equals(modelo.getVistaLM().btnPDF)) {
+            modelo.getVistaLM().btnPDF.setBackground(new Color(51, 51, 51));
         }
     }
 
@@ -203,7 +247,12 @@ public class ControladorPanelLM implements ActionListener, MouseListener, KeyLis
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-            realizarProcedimiento();
+            if (modelo.getVistaLM().txtResultadoPorcentaje.getText().isEmpty()){
+                validarBtnResolver();
+            } else {
+                exportarPDF();
+            }
+            
         }
     }
 

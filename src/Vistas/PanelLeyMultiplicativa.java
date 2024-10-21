@@ -48,7 +48,7 @@ public class PanelLeyMultiplicativa extends javax.swing.JPanel {
         txtResultadoDecimal = new javax.swing.JTextField();
         txtResultadoPorcentaje = new javax.swing.JTextField();
         btnResolver = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lblResolver = new javax.swing.JLabel();
         btnPDF = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btnMostrarProblema = new javax.swing.JPanel();
@@ -101,13 +101,13 @@ public class PanelLeyMultiplicativa extends javax.swing.JPanel {
         FondoPanel.add(txtN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 500, 110, 40));
 
         txtResultnBnAB.setEditable(false);
-        txtResultnBnAB.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        txtResultnBnAB.setFont(new java.awt.Font("Tw Cen MT", 0, 36)); // NOI18N
         txtResultnBnAB.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtResultnBnAB.setBorder(null);
-        FondoPanel.add(txtResultnBnAB, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 450, 100, 40));
+        FondoPanel.add(txtResultnBnAB, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 450, 110, 40));
 
         txtResultNN.setEditable(false);
-        txtResultNN.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        txtResultNN.setFont(new java.awt.Font("Tw Cen MT", 0, 36)); // NOI18N
         txtResultNN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtResultNN.setBorder(null);
         txtResultNN.addActionListener(new java.awt.event.ActionListener() {
@@ -115,44 +115,53 @@ public class PanelLeyMultiplicativa extends javax.swing.JPanel {
                 txtResultNNActionPerformed(evt);
             }
         });
-        FondoPanel.add(txtResultNN, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 500, 100, 40));
+        FondoPanel.add(txtResultNN, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 500, 110, 40));
 
         txtResultadoDecimal.setEditable(false);
-        txtResultadoDecimal.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        txtResultadoDecimal.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
         txtResultadoDecimal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtResultadoDecimal.setBorder(null);
-        FondoPanel.add(txtResultadoDecimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 470, 90, 40));
+        FondoPanel.add(txtResultadoDecimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 470, 100, 40));
 
         txtResultadoPorcentaje.setEditable(false);
-        txtResultadoPorcentaje.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        txtResultadoPorcentaje.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
         txtResultadoPorcentaje.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtResultadoPorcentaje.setBorder(null);
         FondoPanel.add(txtResultadoPorcentaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 470, 100, 40));
 
+        btnResolver.setBackground(new java.awt.Color(51, 51, 51));
         btnResolver.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnResolver.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         btnResolver.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Resolver");
-        btnResolver.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 50));
+        lblResolver.setBackground(new java.awt.Color(255, 255, 255));
+        lblResolver.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
+        lblResolver.setForeground(new java.awt.Color(225, 225, 225));
+        lblResolver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblResolver.setText("Resolver");
+        btnResolver.add(lblResolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 50));
 
-        FondoPanel.add(btnResolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 650, 110, 50));
+        FondoPanel.add(btnResolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 650, 140, 50));
 
+        btnPDF.setBackground(new java.awt.Color(51, 51, 51));
         btnPDF.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         btnPDF.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Exportar PDF");
-        btnPDF.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 50));
+        btnPDF.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 50));
 
-        FondoPanel.add(btnPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 650, 110, 50));
+        FondoPanel.add(btnPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 650, 170, 50));
 
+        btnMostrarProblema.setBackground(new java.awt.Color(51, 51, 51));
         btnMostrarProblema.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Mostrar Problema");
         btnMostrarProblema.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 40));
@@ -189,10 +198,10 @@ public class PanelLeyMultiplicativa extends javax.swing.JPanel {
     public javax.swing.JPanel btnMostrarProblema;
     public javax.swing.JPanel btnPDF;
     public javax.swing.JPanel btnResolver;
-    public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JLabel lblResolver;
     public javax.swing.JTextField txtN1;
     public javax.swing.JTextField txtN2;
     public javax.swing.JTextField txtResultNN;
