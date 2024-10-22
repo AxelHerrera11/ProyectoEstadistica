@@ -71,7 +71,7 @@ public class LmConImp implements ILeyMultiplicativa {
             subProblema.add("\nProblema:\n");
             
             parrafo.setAlignment(Paragraph.ALIGN_JUSTIFIED);
-            parrafo.setFont(FontFactory.getFont("Arial", 12, Font.BOLD, BaseColor.BLACK));
+            parrafo.setFont(FontFactory.getFont("Arial", 12, Font.NORMAL, BaseColor.BLACK));
             parrafo.add(textoProblema + "\n\n");
             
             subEjercicio.setAlignment(Paragraph.ALIGN_LEFT);
@@ -79,6 +79,7 @@ public class LmConImp implements ILeyMultiplicativa {
             subEjercicio.add("Solución:\n");
             
             ejercicio.setAlignment(Paragraph.ALIGN_LEFT);
+            parrafo.setFont(FontFactory.getFont("Arial", 12, Font.NORMAL, BaseColor.BLACK));
             ejercicio.add("P(A∩B) = P(B) * P(A|B)\n");
             ejercicio.add("P(A∩B) = nB/N * n(A|B)/N = ("+ nB + "/" + N1 + ") " + "*" + " (" + AB + "/" + nN2 + ") = " + txtResultnBnAB + "/" + txtResultNN + " = " + txtResultadoDecimal + " = " + txtResultadoPorcentaje);
             

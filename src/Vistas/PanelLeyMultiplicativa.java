@@ -72,18 +72,21 @@ public class PanelLeyMultiplicativa extends javax.swing.JPanel {
         FondoPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 990, 140));
 
         txtnB.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        txtnB.setForeground(new java.awt.Color(102, 102, 102));
         txtnB.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtnB.setText("Ingrese nB");
         txtnB.setBorder(null);
         FondoPanel.add(txtnB, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 450, 110, 40));
 
         txtN1.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        txtN1.setForeground(new java.awt.Color(102, 102, 102));
         txtN1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtN1.setText("Ingrese N");
         txtN1.setBorder(null);
         FondoPanel.add(txtN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 500, 110, 40));
 
         txtnAB.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        txtnAB.setForeground(new java.awt.Color(102, 102, 102));
         txtnAB.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtnAB.setText("Ingrese n(A|B)");
         txtnAB.setBorder(null);
@@ -95,6 +98,7 @@ public class PanelLeyMultiplicativa extends javax.swing.JPanel {
         FondoPanel.add(txtnAB, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 450, 110, 40));
 
         txtN2.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        txtN2.setForeground(new java.awt.Color(102, 102, 102));
         txtN2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtN2.setText("Ingrese N");
         txtN2.setBorder(null);

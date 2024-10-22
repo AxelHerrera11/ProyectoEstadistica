@@ -101,8 +101,6 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
     public void mouseClicked(MouseEvent e) {
         if (e.getComponent().equals(modelo.getVistaP().btn2)) {
             modelo.setTextoProblema(modelo.getVistaP().txtaDescripcionProblema.getText());
-            System.out.println(modelo.getTextoProblema());
-
             Vistas.PanelProbabilidadCondicional panelPro = new PanelProbabilidadCondicional();
             MostrarPanel(panelPro);
         } else if (e.getComponent().equals(modelo.getVistaP().btnInicio)) {
@@ -118,6 +116,7 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
             modelo.getVistaP().Fondo1.setVisible(true);
             validacionBtnEP = false;
         } else if (e.getComponent().equals(modelo.getVistaP().btn3)) {
+            modelo.setTextoProblema(modelo.getVistaP().txtaDescripcionProblema.getText());
             Vistas.PanelLeyMultiplicativa panelLey = new PanelLeyMultiplicativa();
             MostrarPanel(panelLey);
         } else if (e.getComponent().equals(modelo.getVistaP().btnAceptar)) {
