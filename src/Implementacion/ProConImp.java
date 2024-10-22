@@ -60,7 +60,7 @@ public class ProConImp implements IProbabilidadCondicional {
 
         try {
             String ruta = System.getProperty("user.home");
-            PdfWriter.getInstance(documento, new FileOutputStream(ruta + "/Desktop/Respuesta.pdf"));
+            PdfWriter.getInstance(documento, new FileOutputStream(ruta + "/Desktop/Solución Probabilidad Condicional.pdf"));
             Image header = Image.getInstance("src/ImagenesPDF/EncabezadoPC-PDF.png");
             header.scaleToFit(595, 1000);
             header.setAlignment(Chunk.ALIGN_CENTER);
