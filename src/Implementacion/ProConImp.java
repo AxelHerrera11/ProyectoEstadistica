@@ -14,8 +14,15 @@ import com.itextpdf.text.Font;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class ProConImp implements IProbabilidadCondicional {
+
+    public Icon getIcon(String altura, int w, int h) {
+        return new ImageIcon(new ImageIcon(getClass().getResource(altura)).getImage().getScaledInstance(w, h, 0));
+    }
 
     @Override
     public ModeloPanelPC realizarPC(double nAB, double nN1, double nB, double nN2) {
@@ -33,7 +40,7 @@ public class ProConImp implements IProbabilidadCondicional {
 
             iRespuesta = iPAB / iPB;
             aproximacion = String.format("%.2f", iRespuesta);
-            iRespuestaPorcentaje = ((Double.parseDouble(aproximacion))  * 100);
+            iRespuestaPorcentaje = ((Double.parseDouble(aproximacion)) * 100);
 
             modelo.setpAB(iPAB);
             modelo.setpB(iPB);
@@ -50,19 +57,19 @@ public class ProConImp implements IProbabilidadCondicional {
     public ModeloPanelPC exportarPDF(String textoProblema, String nAB, String nN1, String nB, String nN2, String pAB, String pB, String respuesta, String respuestaPorcentaje) {
         ModeloPanelPC modelo = new ModeloPanelPC();
         Document documento = new Document();
-        
+
         try {
             String ruta = System.getProperty("user.home");
             PdfWriter.getInstance(documento, new FileOutputStream(ruta + "/Desktop/Respuesta.pdf"));
             Image header = Image.getInstance("src/ImagenesPDF/EncabezadoPC-PDF.png");
             header.scaleToFit(595, 1000);
             header.setAlignment(Chunk.ALIGN_CENTER);
-            
+
             Paragraph subProblema = new Paragraph();
             Paragraph parrafo = new Paragraph();
             Paragraph subEjercicio = new Paragraph();
             Paragraph ejercicio = new Paragraph();
-            
+
             subProblema.setAlignment(Paragraph.ALIGN_LEFT);
             subProblema.setFont(FontFactory.getFont("Arial", 12, Font.BOLD, BaseColor.BLACK));
             subProblema.add("\nProblema:\n");
@@ -77,8 +84,8 @@ public class ProConImp implements IProbabilidadCondicional {
 
             ejercicio.setAlignment(Paragraph.ALIGN_LEFT);
             ejercicio.add("P(A|B) = P(A∩B)/P(B) = (nA∩B/N)/(nB/N)\n");
-            ejercicio.add("P(A|B) = P(A∩B)/P(B) = (" + nAB + "/"+ nN1 +")/(" + nB + "/"+ nN2 + ") = " + pAB +"/" + pB + " = " + respuesta + " = " + respuestaPorcentaje);
-            
+            ejercicio.add("P(A|B) = P(A∩B)/P(B) = (" + nAB + "/" + nN1 + ")/(" + nB + "/" + nN2 + ") = " + pAB + "/" + pB + " = " + respuesta + " = " + respuestaPorcentaje);
+
             documento.open();
             documento.add(header);
             documento.add(subProblema);
@@ -87,12 +94,13 @@ public class ProConImp implements IProbabilidadCondicional {
             documento.add(ejercicio);
             documento.close();
             System.out.println("PDF creado");
+            JOptionPane.showMessageDialog(null, "PDF CREADO EXISTOSAMENTE", "PDF CREADO", JOptionPane.INFORMATION_MESSAGE, getIcon("/Imagenes/iconoOK.png", 40, 40));
         } catch (DocumentException | FileNotFoundException e) {
             System.out.println("Error al crear el PDF" + e.getMessage());
-        } catch (IOException e){
+        } catch (IOException e) {
             System.out.println("Error en la imagen" + e.getMessage());
         }
-        
+
         return modelo;
     }
 

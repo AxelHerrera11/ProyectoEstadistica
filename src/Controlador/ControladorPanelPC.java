@@ -11,6 +11,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class ControladorPanelPC implements ActionListener, MouseListener, KeyListener {
 
@@ -19,6 +22,10 @@ public class ControladorPanelPC implements ActionListener, MouseListener, KeyLis
 
     public ControladorPanelPC(ModeloPanelPC modelo) {
         this.modelo = modelo;
+    }
+
+    public Icon getIcon(String altura, int w, int h) {
+        return new ImageIcon(new ImageIcon(getClass().getResource(altura)).getImage().getScaledInstance(w, h, 0));
     }
 
     public void validarBtnResolver() {
@@ -31,13 +38,13 @@ public class ControladorPanelPC implements ActionListener, MouseListener, KeyLis
                     || modelo.getVistaPC().txtN1.getText().isEmpty()
                     || modelo.getVistaPC().txtB.getText().isEmpty()
                     || modelo.getVistaPC().txtN2.getText().isEmpty()) {
-
+                JOptionPane.showMessageDialog(null, "INGRESE CORRECTAMENTE LOS DATOS ANTES DE RESOLVER", "ADVERTENCIA", JOptionPane.INFORMATION_MESSAGE, getIcon("/Imagenes/iconoError.png", 40, 40));
             } else {
                 realizarProcedimiento();
                 modelo.getVistaPC().lblBtnResolver.setText("Limpiar");
             }
         } else if (modelo.getVistaPC().lblBtnResolver.getText().equals("Limpiar")) {
-            
+
             modelo.getVistaPC().txtAB.setText("");
             modelo.getVistaPC().txtN1.setText("");
             modelo.getVistaPC().txtB.setText("");
@@ -237,9 +244,9 @@ public class ControladorPanelPC implements ActionListener, MouseListener, KeyLis
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-            if(modelo.getVistaPC().txtRespuestaPorcentaje.getText().isEmpty()){
+            if (modelo.getVistaPC().txtRespuestaPorcentaje.getText().isEmpty()) {
                 validarBtnResolver();
-            } else{
+            } else {
                 exportarPDF();
             }
         }
@@ -247,7 +254,7 @@ public class ControladorPanelPC implements ActionListener, MouseListener, KeyLis
 
     @Override
     public void keyReleased(KeyEvent e) {
-        
+
     }
 
 }

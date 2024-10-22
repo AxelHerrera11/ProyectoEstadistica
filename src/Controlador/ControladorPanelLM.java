@@ -11,6 +11,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class ControladorPanelLM implements ActionListener, MouseListener, KeyListener {
 
@@ -19,6 +22,10 @@ public class ControladorPanelLM implements ActionListener, MouseListener, KeyLis
 
     public ControladorPanelLM(ModeloPanelLM modelo) {
         this.modelo = modelo;
+    }
+
+    public Icon getIcon(String altura, int w, int h) {
+        return new ImageIcon(new ImageIcon(getClass().getResource(altura)).getImage().getScaledInstance(w, h, 0));
     }
 
     public void validarBtnResolver() {
@@ -31,7 +38,7 @@ public class ControladorPanelLM implements ActionListener, MouseListener, KeyLis
                     || modelo.getVistaLM().txtN1.getText().isEmpty()
                     || modelo.getVistaLM().txtnAB.getText().isEmpty()
                     || modelo.getVistaLM().txtN2.getText().isEmpty()) {
-
+                JOptionPane.showMessageDialog(null, "INGRESE CORRECTAMENTE LOS DATOS ANTES DE RESOLVER", "ADVERTENCIA", JOptionPane.INFORMATION_MESSAGE, getIcon("/Imagenes/iconoError.png", 40, 40));
             } else {
                 realizarProcedimiento();
                 modelo.getVistaLM().lblResolver.setText("Limpiar");
@@ -247,12 +254,12 @@ public class ControladorPanelLM implements ActionListener, MouseListener, KeyLis
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-            if (modelo.getVistaLM().txtResultadoPorcentaje.getText().isEmpty()){
+            if (modelo.getVistaLM().txtResultadoPorcentaje.getText().isEmpty()) {
                 validarBtnResolver();
             } else {
                 exportarPDF();
             }
-            
+
         }
     }
 

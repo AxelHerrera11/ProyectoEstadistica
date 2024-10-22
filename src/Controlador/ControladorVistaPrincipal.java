@@ -15,17 +15,24 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class ControladorVistaPrincipal implements ActionListener, WindowListener, MouseListener, MouseMotionListener, KeyListener{
+public class ControladorVistaPrincipal implements ActionListener, WindowListener, MouseListener, MouseMotionListener, KeyListener {
 
     ModeloVistaPrincipal modelo;
-    
+
     boolean validacionBtnEP = false;
     int xMouse, yMouse;
 
     public ControladorVistaPrincipal(ModeloVistaPrincipal modelo) {
         this.modelo = modelo;
+    }
+
+    public Icon getIcon(String altura, int w, int h) {
+        return new ImageIcon(new ImageIcon(getClass().getResource(altura)).getImage().getScaledInstance(w, h, 0));
     }
 
     public void MostrarPanel(JPanel p) {
@@ -37,22 +44,24 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
         modelo.getVistaP().contenedor.revalidate();
         modelo.getVistaP().contenedor.repaint();
     }
-    
-    public void ValidacionAceptar(){
-        if(!modelo.getVistaP().txtaDescripcionProblema.getText().isEmpty()){
-                modelo.getVistaP().btn1.setVisible(false);
-                modelo.getVistaP().btn2.setVisible(true);
-                modelo.getVistaP().btn3.setVisible(true);
-                modelo.getVistaP().lbBtn1.setVisible(false);
-                modelo.getVistaP().lbBtn2.setVisible(false);
-                modelo.getVistaP().lbBtn3.setVisible(false);
-                modelo.getVistaP().bordeBtn1.setVisible(false);
-                modelo.getVistaP().bordeBtn2.setVisible(false);
-                modelo.getVistaP().bordeBtn3.setVisible(false);
-                modelo.getVistaP().btnAceptar.setVisible(false);
-                modelo.getVistaP().btnEliminarProblema.setVisible(false);
-                validacionBtnEP = true;
-            }
+
+    public void ValidacionAceptar() {
+        if (!modelo.getVistaP().txtaDescripcionProblema.getText().isEmpty()) {
+            modelo.getVistaP().btn1.setVisible(false);
+            modelo.getVistaP().btn2.setVisible(true);
+            modelo.getVistaP().btn3.setVisible(true);
+            modelo.getVistaP().lbBtn1.setVisible(false);
+            modelo.getVistaP().lbBtn2.setVisible(false);
+            modelo.getVistaP().lbBtn3.setVisible(false);
+            modelo.getVistaP().bordeBtn1.setVisible(false);
+            modelo.getVistaP().bordeBtn2.setVisible(false);
+            modelo.getVistaP().bordeBtn3.setVisible(false);
+            modelo.getVistaP().btnAceptar.setVisible(false);
+            modelo.getVistaP().btnEliminarProblema.setVisible(false);
+            validacionBtnEP = true;
+        } else {
+            JOptionPane.showMessageDialog(null, "INGRESE UN PROBLEMA ANTES DE INICIAR", "ADVERTENCIA", JOptionPane.INFORMATION_MESSAGE, getIcon("/Imagenes/iconoError.png", 40, 40));
+        }
     }
 
     @Override
@@ -105,7 +114,6 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
             MostrarPanel(panelPro);
         } else if (e.getComponent().equals(modelo.getVistaP().btnInicio)) {
             MostrarPanel(modelo.getVistaP().PanelFondoMenu);
-            System.out.println("Inicio Mostrado");
             modelo.getVistaP().btnAceptar.setVisible(true);
             modelo.getVistaP().btnEliminarProblema.setVisible(true);
             modelo.getVistaP().btn1.setVisible(false);
@@ -114,6 +122,9 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
             modelo.getVistaP().Fondo2.setVisible(false);
             modelo.getVistaP().Fondo3.setVisible(false);
             modelo.getVistaP().Fondo1.setVisible(true);
+            if (modelo.getVistaP().txtaDescripcionProblema.getText().isEmpty()) {
+                modelo.getVistaP().btnEliminarProblema.setVisible(false);
+            }
             validacionBtnEP = false;
         } else if (e.getComponent().equals(modelo.getVistaP().btn3)) {
             modelo.setTextoProblema(modelo.getVistaP().txtaDescripcionProblema.getText());
@@ -121,20 +132,20 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
             MostrarPanel(panelLey);
         } else if (e.getComponent().equals(modelo.getVistaP().btnAceptar)) {
             ValidacionAceptar();
-        } else if (e.getComponent().equals(modelo.getVistaP().btnEliminarProblema)){
+        } else if (e.getComponent().equals(modelo.getVistaP().btnEliminarProblema)) {
             modelo.getVistaP().txtaDescripcionProblema.setText("");
             modelo.getVistaP().btnEliminarProblema.setVisible(false);
-        } else if (e.getComponent().equals(modelo.getVistaP().btnCerrarPrograma)){
+        } else if (e.getComponent().equals(modelo.getVistaP().btnCerrarPrograma)) {
             System.exit(0);
         }
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        if(e.getComponent().equals(modelo.getVistaP().PanelHeader)){
+        if (e.getComponent().equals(modelo.getVistaP().PanelHeader)) {
             xMouse = e.getX();
             yMouse = e.getY();
-        } 
+        }
     }
 
     @Override
@@ -197,14 +208,14 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
             modelo.getVistaP().btnAceptar.setBackground(new Color(102, 102, 102));
         } else if (e.getComponent().equals(modelo.getVistaP().btnEliminarProblema)) {
             modelo.getVistaP().btnEliminarProblema.setBackground(new Color(102, 102, 102));
-        } else if(e.getComponent().equals(modelo.getVistaP().txtaDescripcionProblema)){
-            if(modelo.getVistaP().txtaDescripcionProblema.getText().isEmpty() || validacionBtnEP){
+        } else if (e.getComponent().equals(modelo.getVistaP().txtaDescripcionProblema)) {
+            if (modelo.getVistaP().txtaDescripcionProblema.getText().isEmpty() || validacionBtnEP) {
                 modelo.getVistaP().btnEliminarProblema.setVisible(false);
-            } else{
+            } else {
                 modelo.getVistaP().btnEliminarProblema.setVisible(true);
             }
         }
-        
+
     }
 
     @Override
@@ -226,10 +237,10 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
             modelo.getVistaP().btnEliminarProblema.setBackground(new Color(51, 51, 51));
         } else if (e.getComponent().equals(modelo.getVistaP().btnCerrarPrograma)) {
             modelo.getVistaP().btnCerrarPrograma.setBackground(new Color(51, 51, 51));
-        } else if(e.getComponent().equals(modelo.getVistaP().txtaDescripcionProblema)){
-            if(modelo.getVistaP().txtaDescripcionProblema.getText().isEmpty() || validacionBtnEP){
+        } else if (e.getComponent().equals(modelo.getVistaP().txtaDescripcionProblema)) {
+            if (modelo.getVistaP().txtaDescripcionProblema.getText().isEmpty() || validacionBtnEP) {
                 modelo.getVistaP().btnEliminarProblema.setVisible(false);
-            } else{
+            } else {
                 modelo.getVistaP().btnEliminarProblema.setVisible(true);
             }
         }
@@ -239,7 +250,7 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
     public void mouseDragged(MouseEvent e) {
 //        int x  = e.getXOnScreen();
 //        int y = e.getYOnScreen();
-        if(e.getComponent().equals(modelo.getVistaP().PanelHeader)){
+        if (e.getComponent().equals(modelo.getVistaP().PanelHeader)) {
             int x = e.getXOnScreen();
             int y = e.getYOnScreen();
             modelo.getVistaP().setLocation(x - xMouse, y - yMouse);
@@ -248,12 +259,12 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        
+
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
-        
+
     }
 
     @Override
@@ -265,7 +276,7 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
 
     @Override
     public void keyReleased(KeyEvent e) {
-        
+
     }
 
 }
