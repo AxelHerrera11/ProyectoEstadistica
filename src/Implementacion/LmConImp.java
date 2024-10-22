@@ -14,6 +14,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class LmConImp implements ILeyMultiplicativa {
@@ -55,7 +56,7 @@ public class LmConImp implements ILeyMultiplicativa {
         
         try {
             String ruta = System.getProperty("user.home");
-            PdfWriter.getInstance(documento, new FileOutputStream(ruta + "/Desktop/Respuesta.pdf"));
+            PdfWriter.getInstance(documento, new FileOutputStream(ruta + "/Desktop/Solución Ley Multiplicativa.pdf"));
             Image header = Image.getInstance("src/ImagenesPDF/EncabezadoLM-PDF.png");
             header.scaleToFit(595, 1000);
             header.setAlignment(Chunk.ALIGN_CENTER);
@@ -85,10 +86,12 @@ public class LmConImp implements ILeyMultiplicativa {
             documento.open();
             documento.add(header);
             documento.add(subProblema);
+            documento.add(parrafo);
             documento.add(subEjercicio);
             documento.add(ejercicio);
             documento.close();
             System.out.println("PDF CREADO");
+            JOptionPane.showMessageDialog(null, "<html><p style =\"color:white; font-size: 20px;\">PDF CREADO EXISTOSAMENTE</p></html>", "PDF CREADO", JOptionPane.INFORMATION_MESSAGE);
                
         } catch (DocumentException | FileNotFoundException e) {
             System.out.println("Error al crear el PDF " + e.getMessage());
