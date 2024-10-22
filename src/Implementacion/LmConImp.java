@@ -101,7 +101,7 @@ public class LmConImp implements ILeyMultiplicativa {
             documento.add(ejercicio);
             documento.close();
             System.out.println("PDF CREADO");
-            JOptionPane.showMessageDialog(null, "PDF CREADO EXISTOSAMENTE", "PDF CREADO", JOptionPane.INFORMATION_MESSAGE, getIcon("/Imagenes/iconoOK.png", 40, 40));
+            JOptionPane.showMessageDialog(null, "<html><p style = 'font-family: Tw Cen MT;'>PDF CREADO EXITOSAMENTE</p></html>", "PDF CREADO", JOptionPane.INFORMATION_MESSAGE, getIcon("/Imagenes/iconoOK.png", 40, 40));
 
         } catch (DocumentException | FileNotFoundException e) {
             System.out.println("Error al crear el PDF " + e.getMessage());

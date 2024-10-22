@@ -60,7 +60,7 @@ public class ControladorVistaPrincipal implements ActionListener, WindowListener
             modelo.getVistaP().btnEliminarProblema.setVisible(false);
             validacionBtnEP = true;
         } else {
-            JOptionPane.showMessageDialog(null, "INGRESE UN PROBLEMA ANTES DE INICIAR", "ADVERTENCIA", JOptionPane.INFORMATION_MESSAGE, getIcon("/Imagenes/iconoError.png", 40, 40));
+            JOptionPane.showMessageDialog(null, "<html><p style = 'font-family: Tw Cen MT;'>INGRESE UN PROBLEMA ANTES DE INICIAR</p></html>", "ADVERTENCIA", JOptionPane.INFORMATION_MESSAGE, getIcon("/Imagenes/iconoError.png", 40, 40));
         }
     }
 

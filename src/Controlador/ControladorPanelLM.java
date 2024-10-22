@@ -38,7 +38,9 @@ public class ControladorPanelLM implements ActionListener, MouseListener, KeyLis
                     || modelo.getVistaLM().txtN1.getText().isEmpty()
                     || modelo.getVistaLM().txtnAB.getText().isEmpty()
                     || modelo.getVistaLM().txtN2.getText().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "INGRESE CORRECTAMENTE LOS DATOS ANTES DE RESOLVER", "ADVERTENCIA", JOptionPane.INFORMATION_MESSAGE, getIcon("/Imagenes/iconoError.png", 40, 40));
+                //Para continuar, es necesario que todos los datos sean ingresados correctamente
+                //INGRESE CORRECTAMENTE LOS DATOS ANTES DE RESOLVER
+                JOptionPane.showMessageDialog(null,"<html><p style = 'font-family: Tw Cen MT;'>PARA CONTINUAR, ES NECESARIO QUE TODOS LOS DATOS SEAN INGRESADOS CORRECTAMENTE</p></html>", "ADVERTENCIA", JOptionPane.INFORMATION_MESSAGE, getIcon("/Imagenes/iconoError.png", 40, 40));
             } else {
                 realizarProcedimiento();
                 modelo.getVistaLM().lblResolver.setText("Limpiar");

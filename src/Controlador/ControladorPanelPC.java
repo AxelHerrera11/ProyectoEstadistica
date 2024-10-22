@@ -38,7 +38,7 @@ public class ControladorPanelPC implements ActionListener, MouseListener, KeyLis
                     || modelo.getVistaPC().txtN1.getText().isEmpty()
                     || modelo.getVistaPC().txtB.getText().isEmpty()
                     || modelo.getVistaPC().txtN2.getText().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "INGRESE CORRECTAMENTE LOS DATOS ANTES DE RESOLVER", "ADVERTENCIA", JOptionPane.INFORMATION_MESSAGE, getIcon("/Imagenes/iconoError.png", 40, 40));
+                JOptionPane.showMessageDialog(null, "<html><p style = 'font-family: Tw Cen MT;'>PARA CONTINUAR, ES NECESARIO QUE TODOS LOS DATOS SEAN INGRESADOS CORRECTAMENTE</p></html>", "ADVERTENCIA", JOptionPane.INFORMATION_MESSAGE, getIcon("/Imagenes/iconoError.png", 40, 40));
             } else {
                 realizarProcedimiento();
                 modelo.getVistaPC().lblBtnResolver.setText("Limpiar");
